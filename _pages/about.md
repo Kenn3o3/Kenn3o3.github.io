@@ -7,6 +7,4 @@ redirect_from:
   - /about.html
 ---
 
-This is my about me. To be updated.
-
-Kenny L.H. Wong. Currently constructing this site based on https://academicpages.github.io/.
+I am a senior year undergraduate student majoring in Computer Science, my research interests lie in Deep Learning, 3D Computer Vision, Embodied AI, Robotics.

@@ -32,9 +32,9 @@ author:
 
   # Academic websites
   arxiv            : # URL - Update with the correct link to your profile
-  googlescholar    : "https://scholar.google.com/#"
+  googlescholar    : "https://scholar.google.com/citations?user=oJb-iNQAAAAJ"
   impactstory      : # URL
-  orcid            : "http://orcid.org/#"
+  orcid            : "https://orcid.org/0009-0004-3599-1649"
   semantic         : # URL
   pubmed           : #
   researchgate     : # URL
@@ -57,7 +57,7 @@ author:
   keybase          : # Username
   instagram        : # Username
   lastfm           : # Username
-  linkedin         : # Username
+  linkedin         : kennywlh
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username
@@ -81,6 +81,10 @@ publication_category:
     title: 'Journal Articles'    
   conferences:
     title: 'Conference Papers'
+  preprints:
+    title: 'Preprint Papers'
+  preprints:
+    title: 'Preprints'
 
 # Site Settings
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
