@@ -1,6 +1,6 @@
 ---
 title: 'Fundamental Deep Learning 3D Reconstruction Techniques'
-date: 2024-02-17
+date: 2024-11-24
 permalink: /3d-reconstruction/
 tags:
   - 3D Reconstruction
