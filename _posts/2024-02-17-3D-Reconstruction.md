@@ -165,7 +165,7 @@ $$
 
 傳統的三維重建演算法高度依賴訓練資料來捕捉物體的所有細節。然而，人類能夠僅憑一張圖像就估計出三維表面。這個概念是 **Zero-1-to-3** 框架的基礎，該框架由哥倫比亞大學開發，提出了一種基於擴散模型的三維重建方法。 Zero-1-to-3 利用最初為文字生成影像設計的 **潛在擴散模型（Latent Diffusion Model，LDM）**，根據相機的外部參數（如旋轉和平移）生成影像的新視角。透過利用大規模LDM 學習到的幾何先驗，Zero-1-to-3 能夠從單張圖像生成新視角，展示了強大的零樣本泛化能力，在單視圖三維重建和新視圖合成任務中都優於先前的模型。如圖所示：
 
-![Zero-1-to-3 框架概覽](kenny_folder/zero-1-2-3.png)
+![Zero-1-to-3 框架概覽](https://Kenn3o3.github.io/files/3DGS/kenny_folder/zero-1-2-3.png)
 *圖 1：Zero-1-to-3 框架概覽（來自原始論文）*
 
 ### 去噪擴散機率模型（DDPM）
@@ -182,7 +182,7 @@ $$
 
 其中，$$x_0$$ 是原始數據，$$x_t$$ 是第 $$t$$ 個時間步的數據，$$\epsilon$$ 是噪聲，$$\alpha_t$$ 是方差調度參數，決定每一步添加的噪聲量。
 
-![DDPM 的前向過程](kenny_folder/ddpm_forward_process.png)
+![DDPM 的前向過程](https://Kenn3o3.github.io/files/3DGS/kenny_folder/ddpm_forward_process.png)
 *圖 2：DDPM 的前向過程（https://www.youtube.com/watch?v=ifCDXFdeaaM\&t=608）*
 
 #### 逆向流程
@@ -216,14 +216,14 @@ $$
    - 更新$$x_{t-1}$$。
 3. 返回$$x_0$$。
 
-![DDPM 的採樣過程](kenny_folder/ddpm_sampling.png)
+![DDPM 的採樣過程](https://Kenn3o3.github.io/files/3DGS/kenny_folder/ddpm_sampling.png)
 *圖 3：DDPM 的取樣過程（https://www.youtube.com/watch?v=ifCDXFdeaaM\&t=608）*
 
 ### Zero-1-to-3 中的潛在擴散模型（LDM）
 
 **潛在擴散模型（Latent Diffusion Models，LDM）** 是一種結合了擴散模型和變分自編碼器（VAE）優勢的生成模型。傳統的 DDPM 在像素空間操作，計算量大。 LDM 將影像資料壓縮到潛在空間，再在潛在空間中進行擴散和去噪，提高了產生高品質影像的效率。
 
-![LDM 架構](kenny_folder/LDM.png)
+![LDM 架構](https://Kenn3o3.github.io/files/3DGS/kenny_folder/LDM.png)
 *圖 4：LDM 的架構（來自原始論文）*
 
 #### 訓練 LDM 模型$$\epsilon_{\theta}$$
@@ -238,7 +238,7 @@ LDM 的訓練包括兩個主要階段：
  \mathcal{L}_{\text{VAE}}(\phi, \psi) = \mathbb{E}_{q_\phi(z|x)}[\log p_\psi(x|z)] - D_{\text{KL}}(q_\phi(z|x) \| p(z))
  $$
 
- ![訓練 VAE](kenny_folder/training_VAE.png)
+ ![訓練 VAE](https://Kenn3o3.github.io/files/3DGS/kenny_folder/training_VAE.png)
  *圖 5：訓練 VAE（圖片來自 Lightning AI）*
 
 2. **訓練 Attention-U-Net 去噪器：** 在潛在空間中訓練去噪模型，學習將雜訊樣本$$z_T$$ 轉換為資料分佈$$z_0$$。
@@ -249,13 +249,13 @@ LDM 的訓練包括兩個主要階段：
  \mathcal{L}(\theta) = \mathbb{E}_{z_0, \epsilon \sim \mathcal{N}(0, I), t} \left[ \| \epsilon - \epsilon_{\theta} (z_t, t) \|^2 \right]
  $$
 
- ![最小化分佈差異](kenny_folder/dis.png)
+ ![最小化分佈差異](https://Kenn3o3.github.io/files/3DGS/kenny_folder/dis.png)
  *圖 6：最小化分佈差異（取自 https://agustinus.kristia.de/techblog/2016/12/21/forward-reverse-kl/ ）*
 
- ![Attention-U-Net 架構](kenny_folder/attention_u_net.png)
+ ![Attention-U-Net 架構](https://Kenn3o3.github.io/files/3DGS/kenny_folder/attention_u_net.png)
  *圖 7：Attention-U-Net 架構（來自原始論文）*
 
- ![訓練 Attention-U-Net 去雜訊](kenny_folder/training_unet.png)
+ ![訓練 Attention-U-Net 去雜訊](https://Kenn3o3.github.io/files/3DGS/kenny_folder/training_unet.png)
  *圖 8：訓練 Attention-U-Net 去雜訊（圖片來自 Lightning AI）*
 
 #### 基於相機參數的條件生成
@@ -282,7 +282,7 @@ $$
 
 整合過程通常使用體積融合或多視圖立體演算法，建立物件的詳細三維表示。
 
-![Zero-1-to-3 的三維重建範例](kenny_folder/zero-1-to-3-demo.png)
+![Zero-1-to-3 的三維重建範例](https://Kenn3o3.github.io/files/3DGS/kenny_folder/zero-1-to-3-demo.png)
 *圖 9：Zero-1-to-3 的三維重建範例*
 
 ### 基於擴散模型和 NeRF 的三維重建的局限性
@@ -300,7 +300,7 @@ $$
 ### 概述
 
 **三維高斯散射（3D Gaussian Splatting）** 提供了一種高品質的即時渲染三維場景的新視角方法。它利用高斯函數來表示平滑且精確的紋理，透過捕捉場景的照片來實現。
-![3D Gaussian Splatting 過程概覽](Olivers/image.png)
+![3D Gaussian Splatting 過程概覽](https://Kenn3o3.github.io/files/3DGS/Olivers/image.png)
 
 *圖 1：3D Gaussian Splatting 流程概覽*
 
@@ -351,7 +351,7 @@ $$
 - **高斯複製**：對於填充區域不足的高斯，如果其小於定義的閾值，則克隆該高斯並沿其方向移動以覆蓋空白區域。此操作自適應地增加高斯的數量和體積，直到該區域被良好擬合。
 - **高斯分裂**：對於過度重建的區域（高斯的方差過高），將其按照因子 $$\phi$$ 分裂為更小的高斯。原論文使用 $$\phi = 1.6$$。
 
-![高斯的密度控制](Olivers/des.png)
+![高斯的密度控制](https://Kenn3o3.github.io/files/3DGS/Olivers/des.png)
 
 *圖 2：在過度重建區域進行高斯分裂，在欠重建區域進行高斯克隆*
 
@@ -427,7 +427,7 @@ $$
 
 為了快速渲染高斯建構的三維模型，使用了 **基於 Tile 的光柵化器（Tile-based Rasterizer）**（見下圖）。此方法首先利用給定的相機視角 $$V$$ 和其位置 $$\mathbf{p}$$，過濾掉不在視錐內的高斯，從而僅處理對當前視角有貢獻的高斯。這種方法減少了渲染過程中需要處理的數據，並提高了渲染效率。
 
-![基於 Tile 的光柵化器示意圖](Olivers/tile.png)
+![基於 Tile 的光柵化器示意圖](https://Kenn3o3.github.io/files/3DGS/Olivers/tile.png)
 
 *圖 3：基於 Tile 的光柵化器區域，其中綠色高斯對視錐有貢獻，紅色高斯無貢獻，給定相機角度 $$V$$*
 
