@@ -9,13 +9,17 @@ tags:
   - NeRF
 ---
 
+This article presents fundamental deep learning techniques for 3D reconstruction with the aim of sharing knowledge, I do not claim any credit for the techniques introduced next. If you are interested in using any of the discussed methods, please refer to the original works listed in the references section for more detailed information. 
+
+If you are looking for English version, please navigate to [https://arxiv.org/abs/2407.08137](https://arxiv.org/abs/2407.08137).
+
 這是一篇介紹Latent Diffusion Models, 3D Gaussian Splatting, NeRF如何用於三維重建的文章（使用了GPT等工具潤色）。Arxiv 版本已放在了 [https://arxiv.org/abs/2407.08137](https://arxiv.org/abs/2407.08137), 有興趣可以去查閱看看。如有疑問可以在 github 建立 issue 查詢。
 
 # Introduction
 
 三維重建（3D Reconstruction）是從影像和/或視訊資料中建立體積表面的過程。近年來，該領域在學術界和工業界都引起了極大的關注，廣泛應用於虛擬實境（VR）、擴增實境（AR）、自動駕駛和機器人等眾多領域。深度學習（Deep Learning，DL）已成為推動三維重建技術發展的核心力量，展現了在增強真實感和精確度方面的卓越成果。
 
-本Blog將深入探討基於深度學習的三維重建技術，重點在於神經輻射場（Neural Radiance Fields，NeRF）、潛在擴散模型（Latent Diffusion Models，LDM）和三維高斯散射（3D Gaussian Splatting）。我們將解剖這些技術背後的演算法，分析其優劣勢，並展望這一快速發展的領域的未來研究方向。
+本Article將深入探討基於深度學習的三維重建技術，重點在於神經輻射場（Neural Radiance Fields，NeRF）、潛在擴散模型（Latent Diffusion Models，LDM）和三維高斯散射（3D Gaussian Splatting）。我們將解剖這些技術背後的演算法，分析其優劣勢，並展望這一快速發展的領域的未來研究方向。
 
 ## Neural Radiance Field（NeRF）
 
@@ -445,4 +449,55 @@ $$
 
 高斯的優化是透過與真實相機視角的梯度比較進行的。然而，對於包含較少或沒有資料點的視角，由於缺乏足夠的資料來優化該區域的高斯，可能會導致渲染結果出現偽影和失真。
 
+# 3D重建的未來趨勢
+
+## 以語義為導向的3D重建 (Semantic-Driven 3D Reconstruction)
+目前大多數的3D重建技術專注於從影像中生成3D模型。然而，整合文字提示作為引導因素為未來研究開啟了令人興奮的可能性。例如，論文《FaceDNeRF: Semantics-Driven Face Reconstruction, Prompt Editing and Relighting with Diffusion Models》 展示了如何利用文本線索顯著提升重建模型的精確性與上下文相關性。此外，像《LGM: Large Multi-View Gaussian Model for High-Resolution 3D Content Creation》中提出的方法，更是展示了僅依靠文字提示進行零樣本（Zero-Shot）的高解析度3D內容生成的潛力。
+
+## 動態3D場景重建 (Dynamic 3D Scene Reconstruction)
+現有的技術主要針對靜態場景進行3D模型的重建，這意味著場景在捕捉過程中如果有結構變化，可能會導致特定區域的重建不足。為解決此問題，《4D Gaussian Splatting for Real-Time Dynamic Scene Rendering》 提出了以一組標準3D Gaussian分佈為基礎，通過形變場 (Deformation Field) 在不同行為時間點進行轉換的方法。此技術能夠生成動態變化的3D模型，有效表示物體的運動過程，實現動態3D場景重建。
+
+## 單視角3D重建 (Single View 3D Reconstruction)
+基於《Zero 1-to-3》的方法論，單視角3D重建逐漸成為一個受到關注的研究領域。此技術結合了擴散模型 (Diffusion Models)，從單張圖像生成3D物體。相關研究如LGM和 InstantMesh，在此領域展示了極具潛力的成果，為單一視角下的3D生成帶來了嶄新的可能性。
+
 ---
+
+# Reference
+
+1. **Jonathan Ho**, **Ajay Jain**, and **Pieter Abbeel**. *Denoising Diffusion Probabilistic Models*, 2020.
+
+2. **Bernhard Kerbl**, **Georgios Kopanas**, **Thomas Leimkühler**, and **George Drettakis**. *3D Gaussian Splatting for Real-Time Radiance Field Rendering*, 2023.
+
+3. **Agustinus Kristiadi**. *KL Divergence: Forward vs Reverse?* [https://agustinus.kristia.de/techblog/2016/12/21/forward-reverse-kl/](https://agustinus.kristia.de/techblog/2016/12/21/forward-reverse-kl/), 2016. Accessed: 2024-04-22.
+
+4. **Hung-yi Lee**. *Forward Process of DDPM*, April 2023. [https://www.youtube.com/watch?v=ifCDXFdeaaM&t=608](https://www.youtube.com/watch?v=ifCDXFdeaaM&t=608).
+
+5. **Ruoshi Liu**, **Rundi Wu**, **Basile Van Hoorick**, **Pavel Tokmakov**, **Sergey Zakharov**, and **Carl Vondrick**. *Zero-1-to-3: Zero-Shot One Image to 3D Object*, 2023.
+
+6. **Stephen Lombardi**, **Tomas Simon**, **Jason Saragih**, **Gabriel Schwartz**, **Andreas Lehrmann**, and **Yaser Sheikh**. *Neural Volumes: Learning Dynamic Renderable Volumes from Images*. **ACM Transactions on Graphics**, 38(4):65:1–65:14, July 2019.
+
+7. **Ricardo Martin-Brualla**, **Noha Radwan**, **Mehdi S. M. Sajjadi**, **Jonathan T. Barron**, **Alexey Dosovitskiy**, and **Daniel Duckworth**. *NeRF in the Wild: Neural Radiance Fields for Unconstrained Photo Collections*, 2021.
+
+8. **Lars Mescheder**, **Michael Oechsle**, **Michael Niemeyer**, **Sebastian Nowozin**, and **Andreas Geiger**. *Occupancy Networks: Learning 3D Reconstruction in Function Space*, 2019.
+
+9. **Ben Mildenhall**, **Pratul P. Srinivasan**, **Matthew Tancik**, **Jonathan T. Barron**, **Ravi Ramamoorthi**, and **Ren Ng**. *NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis*, 2020.
+
+10. **Thomas Müller**, **Alex Evans**, **Christoph Schied**, and **Alexander Keller**. *Instant Neural Graphics Primitives with a Multiresolution Hash Encoding*. **ACM Transactions on Graphics**, 41(4):1–15, July 2022.
+
+11. **Jeong Joon Park**, **Peter Florence**, **Julian Straub**, **Richard Newcombe**, and **Steven Lovegrove**. *DeepSDF: Learning Continuous Signed Distance Functions for Shape Representation*, 2019.
+
+12. **Eric Penner** and **Li Zhang**. *Soft 3D Reconstruction for View Synthesis*, 36(6), 2017.
+
+13. **Robin Rombach**, **Andreas Blattmann**, **Dominik Lorenz**, **Patrick Esser**, and **Björn Ommer**. *High-Resolution Image Synthesis with Latent Diffusion Models*, 2022.
+
+14. **Jiaxiang Tang**, **Zhaoxi Chen**, **Xiaokang Chen**, **Tengfei Wang**, **Gang Zeng**, and **Ziwei Liu**. *LGM: Large Multi-View Gaussian Model for High-Resolution 3D Content Creation*. **arXiv preprint arXiv:2402.05054**, 2024.
+
+15. **Jonathan Tremblay**, **Moustafa Meshry**, **Alex Evans**, **Jan Kautz**, **Alexander Keller**, **Sameh Khamis**, **Thomas Müller**, **Charles Loop**, **Nathan Morrical**, **Koki Nagano**, **Towaki Takikawa**, and **Stan Birchfield**. *RTMV: A Ray-Traced Multi-View Synthetic Dataset for Novel View Synthesis*, 2022.
+
+16. **Guanjun Wu**, **Taoran Yi**, **Jiemin Fang**, **Lingxi Xie**, **Xiaopeng Zhang**, **Wei Wei**, **Wenyu Liu**, **Qi Tian**, and **Xinggang Wang**. *4D Gaussian Splatting for Real-Time Dynamic Scene Rendering*, 2023.
+
+17. **Jiale Xu**, **Weihao Cheng**, **Yiming Gao**, **Xintao Wang**, **Shenghua Gao**, and **Ying Shan**. *InstantMesh: Efficient 3D Mesh Generation from a Single Image with Sparse-View Large Reconstruction Models*, 2024.
+
+18. **Hao Zhang**, **Yanbo Xu**, **Tianyuan Dai**, **Yu-Wing Tai**, and **Chi-Keung Tang**. *FaceDNeRF: Semantics-Driven Face Reconstruction, Prompt Editing and Relighting with Diffusion Models*, 2023.
+
+19. **Qiang Zhang**, **Seung-Hwan Baek**, **Szymon Rusinkiewicz**, and **Felix Heide**. *Differentiable Point-Based Radiance Fields for Efficient View Synthesis*, 2023.
