@@ -7,6 +7,7 @@ tags:
   - Latent Diffusion Models
   - 3D Gaussian Splatting
   - NeRF
+  - Side Project
 ---
 
 **Authors:** Yonge Bai, Lik Hang Wong, Tsz Yin Twan
