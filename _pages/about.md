@@ -14,4 +14,4 @@ Please reach out to me if you are interested in Embodied AI, Robotics, Multi-mod
 News
 ------
 - Currently grinding
-- (2024/11/01) Admitted to **2025 Fall CUHK MSc CS**
+- (2024/11/01) Admitted to **CUHK MSc CS (2025 Fall Entry)**
