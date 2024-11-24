@@ -9,6 +9,8 @@ tags:
   - NeRF
 ---
 
+**Authors:** Yonge Bai, Lik Hang Wong, Tsz Yin Twan
+
 This article presents fundamental deep learning techniques for 3D reconstruction with the aim of sharing knowledge, I do not claim any credit for the techniques introduced next. If you are interested in using any of the discussed methods, please refer to the original works listed in the references section for more detailed information. 
 
 **If you are looking for English version, please navigate to [https://arxiv.org/abs/2407.08137](https://arxiv.org/abs/2407.08137).**
