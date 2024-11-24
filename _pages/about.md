@@ -11,4 +11,4 @@ I am a senior year undergraduate student majoring in Computer Science, my resear
 
 News
 ------
-- 2025 Fall CUHK MsC CS
+- 2025 Fall CUHK MSc CS
