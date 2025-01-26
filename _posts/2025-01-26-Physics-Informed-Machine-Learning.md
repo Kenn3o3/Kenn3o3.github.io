@@ -16,7 +16,7 @@ Reference:
 
 - [Neural ODEs (NODEs) \[Physics Informed Machine Learning\] YouTube Video](https://www.youtube.com/watch?v=nJphsM4obOk&list=PLMrJAkhIeNNQ0BaKuBKY43k4xMo6NSbBa&index=19)
 - [Original paper](https://arxiv.org/abs/1806.07366)
-- ChatGPT-4o
+- ChatGPT-4o (for polishing and content structuring)
 
 # **Neural Ordinary Differential Equations (Neural ODEs)**
 
