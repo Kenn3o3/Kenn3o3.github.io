@@ -8,6 +8,8 @@ tags:
   - ROS 2
 ---
 
+**Authors:**  Wong Lik Hang Kenny
+
 This is a tutorial page for isaac sim simulator and ros 2.
 
 <!-- Headings are cool
