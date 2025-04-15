@@ -24,7 +24,7 @@ author:
   avatar           : "profile.png"
   name             : "Wong Lik Hang Kenny"
   pronouns         : # example: "she/her"  
-  bio              : "I am a senior year undergraduate student majoring in Computer Science, my research interests lie in Deep Learning, 3D Computer Vision, Embodied AI, Robotics"
+  bio              : "I am a senior year undergraduate student majoring in Computer Science, my research interests lie in Deep Learning, 3D Computer Vision, Embodied AI, Robotics, Continual Learning"
   location         : "Hong Kong SAR"
   employer         : "City University of Hong Kong"
   uri              : # URL
@@ -212,14 +212,14 @@ kramdown:
 
 
 # These settings control the types of collections used by the template
-collections:
+collections: #change here
   teaching:
     output: true
     permalink: /:collection/:path/
   publications:
     output: true
     permalink: /:collection/:path/
-  portfolio:
+  projects:
     output: true
     permalink: /:collection/:path/
   talks:
@@ -228,7 +228,7 @@ collections:
 
 
 # These settings control how pages and collections are included in the site
-defaults:
+defaults: #change here
   # _posts
   - scope:
       path: ""
@@ -268,7 +268,7 @@ defaults:
   # _portfolio
   - scope:
       path: ""
-      type: portfolio
+      type: projects
     values:
       layout: single
       author_profile: true

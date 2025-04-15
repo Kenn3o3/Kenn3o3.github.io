@@ -46,3 +46,9 @@ gem 'webrick', '~> 1.8'
 bundle install
 bundle exec jekyll serve
 ```
+
+Note: Modify
+
+_pages\about.md
+_config.yml (marked #change here)
+add a _pages/(projects).md
