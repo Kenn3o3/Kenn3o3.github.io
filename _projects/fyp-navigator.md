@@ -77,7 +77,7 @@ This dataset captures the actions and viewpoints of an expert **Unitree Go2 robo
 
 *Figure 3: Pipeline for collecting the VLN-Go2-Matterport dataset.*
 
-The VLN-Go2-Matterport dataset’s creation is a carefully designed process, utilizing Isaac Lab and the VLN-CE-Isaac benchmark dataset [cheng2025navilaleggedrobotvisionlanguageaction]. Illustrated in Figure 3, this pipeline ensures high-quality, consistent data reflective of a quadruped robot’s navigation prowess:
+The VLN-Go2-Matterport dataset’s creation is a carefully designed process, utilizing Isaac Lab and the VLN-CE-Isaac benchmark dataset. Illustrated in Figure 3, this pipeline ensures high-quality, consistent data reflective of a quadruped robot’s navigation process:
 
 1. **PD Controller:**
    - A Proportional-Derivative (PD) controller acts as the expert navigator, choosing discrete actions to steer the Unitree Go2 along predefined expert paths.
