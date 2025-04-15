@@ -19,4 +19,30 @@ Please reach out to me via `klhwong3 [at] outlook [dot] com`. I am interested in
 ## Project Highlights
 Here are some of my featured projects:
 
-<table style="width: 100%; border: none;"> {% for project in site.projects %} <tr style="width: 100%; border: none;"> <td width="20%" style="padding: 10px 30px 10px 10px; border: none;"> <div class="container"> <img src="{{ project.thumbnail }}" width="180px" style="box-shadow: 4px 4px 4px #888888; margin-left: 10px;"> </div> </td> <td style="padding: 10px 30px 10px 10px; border: none;"> <a href="{{ project.url }}" style="font-size: 15px; font-weight: bold;">{{ project.title }}</a> <div style="height: 5px;"></div> <div style="font-size: 12px">{{ project.authors }}</div> <div style="height: 5px;"></div> <div style="font-size: 12px">{{ project.venue }}</div> <div style="height: 5px;"></div> <div style="font-size: 12px"> {% if project.paper_url %}<a href="{{ project.paper_url }}" target="_blank">Paper</a> / {% endif %} {% if project.poster_url %}<a href="{{ project.poster_url }}" target="_blank">Poster</a> / {% endif %} {% if project.code_url %}<a href="{{ project.code_url }}" target="_blank">Code</a> / {% endif %} {% if project.arxiv_url %}<a href="{{ project.arxiv_url }}" target="_blank">arXiv</a>{% endif %} </div> <div style="height: 5px;"></div></td> </tr> {% endfor %} </table>
+<!-- <table style="width: 100%; border: none;"> {% for project in site.projects %} <tr style="width: 100%; border: none;"> <td width="20%" style="padding: 10px 30px 10px 10px; border: none;"> <div class="container"> <img src="{{ project.thumbnail }}" width="180px" style="box-shadow: 4px 4px 4px #888888; margin-left: 10px;"> </div> </td> <td style="padding: 10px 30px 10px 10px; border: none;"> <a href="{{ project.url }}" style="font-size: 15px; font-weight: bold;">{{ project.title }}</a> <div style="height: 5px;"></div> <div style="font-size: 12px">{{ project.authors }}</div> <div style="height: 5px;"></div> <div style="font-size: 12px">{{ project.venue }}</div> <div style="height: 5px;"></div> <div style="font-size: 12px"> {% if project.paper_url %}<a href="{{ project.paper_url }}" target="_blank">Paper</a> / {% endif %} {% if project.poster_url %}<a href="{{ project.poster_url }}" target="_blank">Poster</a> / {% endif %} {% if project.code_url %}<a href="{{ project.code_url }}" target="_blank">Code</a> / {% endif %} {% if project.arxiv_url %}<a href="{{ project.arxiv_url }}" target="_blank">arXiv</a>{% endif %} </div> <div style="height: 5px;"></div></td> </tr> {% endfor %} </table> -->
+
+<table style="width: 100%; border: none;">
+  {% for project in site.projects %}
+  <tr style="width: 100%; border: none;">
+    <td width="20%" style="padding: 10px 30px 10px 10px; border: none;">
+      <div class="container">
+        <img src="{{ project.thumbnail }}" width="180px" style="box-shadow: 4px 4px 4px #888888; margin-left: 10px;">
+      </div>
+    </td>
+    <td style="padding: 10px 30px 10px 10px; border: none;">
+      <a href="{{ project.url }}" style="font-size: 15px; font-weight: bold;">{{ project.title }}</a>
+      <div style="height: 5px;"></div>
+      <div style="font-size: 12px">{{ project.authors }}</div>
+      <div style="height: 5px;"></div>
+      <div style="font-size: 12px">{{ project.venue }}, {{ project.date | date: "%Y-%m-%d" }}</div>
+      <div style="height: 5px;"></div>
+      <div style="font-size: 12px">
+        {% if project.paper_url %}<a href="{{ project.paper_url }}" target="_blank">Paper</a> / {% endif %}
+        {% if project.poster_url %}<a href="{{ project.poster_url }}" target="_blank">Poster</a> / {% endif %}
+        {% if project.code_url %}<a href="{{ project.code_url }}" target="_blank">Code</a> / {% endif %}
+        {% if project.arxiv_url %}<a href="{{ project.arxiv_url }}" target="_blank">arXiv</a>{% endif %}
+      </div>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
