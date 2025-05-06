@@ -11,3 +11,5 @@ date: 2025-05-06
 thumbnail: /images/eai-survey/thumbnail.png
 paper_url: https://arxiv.org/abs/2505.01458
 ---
+
+paper_url: [https://arxiv.org/abs/2505.01458](paper_url: https://arxiv.org/abs/2505.01458)
