@@ -53,8 +53,8 @@ Below are some of my research projects:
 
 ## My Corner
 
-### Blogs
-<table style="width: 100%; border: none;">
+### Blogs (Coming Soon)
+<!-- <table style="width: 100%; border: none;">
   {% assign sorted_blogs = site.blogs | sort: 'date' | reverse %}
   {% for blog in sorted_blogs %}
     <tr>
@@ -64,7 +64,7 @@ Below are some of my research projects:
       </td>
     </tr>
   {% endfor %}
-</table>
+</table> -->
 
 ### Learning
 <table style="width: 100%; border: none;">
