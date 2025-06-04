@@ -1,0 +1,34 @@
+# The following is the order of the links in the header of the website.
+#
+# Changing the order here will adjust the order and you can also add additional
+# links. Removing a link prevents it from showing in the header, but does not
+# prevent it from being included in the site.
+
+main:
+
+  - title: "Home"
+    utl: /
+
+  # - title: "Publications"
+    # url: /publications/
+
+  # - title: "Talks"
+  #   url: /talks/    
+
+  # - title: "Teaching"
+  #   url: /teaching/    
+    
+  - title: "Projects"
+    url: /projects/
+
+  - title: "Learning"
+    url: /learning/
+
+  - title: "Blog Posts"
+    url: /blogs/
+    
+  # - title: "CV"
+  #   url: /cv/
+    
+  # - title: "Guide"
+  #   url: /markdown/
