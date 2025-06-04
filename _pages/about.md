@@ -13,9 +13,9 @@ My research interests lie at the intersection of Deep Learning, 3D Computer Visi
 
 ***"Life is about adapting to challenges and remembering the lessons they teach."***
 
-I started writing blogs recently.
-
 You can view my CV ([here](/files/resume.pdf)). Feel free to reach out to me at `klhwong3 [at] outlook [dot] com`—I’d love to collaborate on something exciting in the future! :>
+
+<a href="https://visitorbadge.io/status?path=https%3A%2F%2Fkenn3o3.github.io%2F"><img src="https://api.visitorbadge.io/api/combined?path=https%3A%2F%2Fkenn3o3.github.io%2F&labelColor=%23d9e3f0&countColor=%232ccce4" /></a>
 
 ## News
 - (2025-06-04) Graduated from **City University of Hong Kong (CityUHK)** with **BSc in Computer Science**
