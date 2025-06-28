@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modular Study Adventure Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #4a5568;
+            margin-bottom: 30px;
+        }
+        
+        .config-section {
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .state-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+            gap: 7px;
+            margin-bottom: 20px;
+        }
+        
+        .state-card {
+            background: #e6fffa;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #b2f5ea;
+        }
+        
+        .challenge {
+            margin: 15px 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        button {
+            padding: 12px 24px;
+            margin: 8px;
+            border: none;
+            border-radius: 25px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .config-button {
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+            box-shadow: 0 4px 15px rgba(72, 187, 120, 0.3);
+        }
+        
+        .config-button:hover {
+            box-shadow: 0 6px 20px rgba(72, 187, 120, 0.4);
+        }
+        
+        #result-container {
+            margin-top: 20px;
+            padding: 15px;
+            background: #fff5f5;
+            border-radius: 8px;
+            border-left: 4px solid #fc8181;
+        }
+        
+        .json-editor {
+            width: 100%;
+            height: 200px;
+            font-family: 'Courier New', monospace;
+            padding: 10px;
+            border: 1px solid #d1d5db;
+            border-radius: 5px;
+            resize: vertical;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .phase-progress {
+            background: #e2e8f0;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        
+        .progress-bar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 8px;
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+        
+        .tab-content {
+            margin-top: 10px;
+        }
+        
+        .tab-content.hidden {
+            display: none;
+        }
+        
+        .state-item, .phase-item {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        .challenge-item, .action {
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        label {
+            display: block;
+            margin: 5px 0;
+        }
+        
+        input[type="text"], input[type="number"], textarea, select {
+            width: 100%;
+            padding: 5px;
+            margin: 5px 0;
+            border: 1px solid #d1d5db;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Modular Study Adventure Game</h1>
+        
+        <!-- Configuration Section -->
+        <div class="config-section">
+            <h3>🎮 Game Configuration</h3>
+            <button class="config-button" onclick="gameManager.showConfig()">Customize Game</button>
+            <button class="config-button" onclick="gameManager.resetGame()">Reset Game</button>
+            <input type="file" id="import-config" accept=".json" style="display: none;" onchange="gameManager.importConfiguration(event)">
+            <button class="config-button" onclick="document.getElementById('import-config').click()">Import Configuration</button>
+            <button class="config-button" onclick="gameManager.exportConfiguration()">Export Configuration</button>
+        </div>
+        
+        <!-- Configuration Editor -->
+        <div id="config-editor" class="config-section hidden">
+            <h3>📝 Customize Game</h3>
+            <div class="tabs">
+                <button onclick="showTab('states')">States</button>
+                <button onclick="showTab('phases')">Phases</button>
+            </div>
+            <div id="states-tab" class="tab-content">
+                <div id="states-list"></div>
+                <button onclick="addState()">Add State</button>
+            </div>
+            <div id="phases-tab" class="tab-content hidden">
+                <div id="phases-list"></div>
+                <button onclick="addPhase()">Add Phase</button>
+            </div>
+            <button class="config-button" onclick="gameManager.applyConfig()">Apply Configuration</button>
+            <button onclick="gameManager.hideConfig()">Cancel</button>
+        </div>
+        
+        <!-- Game State Display -->
+        <div class="phase-progress">
+            <h3>📊 Study Progress</h3>
+            <p>Phase: <span id="current-phase">1</span> / <span id="total-phases">3</span></p>
+            <div class="progress-bar" id="progress-bar" style="width: 33%;"></div>
+        </div>
+        
+        <div class="state-container" id="state-container">
+            <!-- Dynamic state cards will be inserted here -->
+        </div>
+        
+        <!-- Challenge Display -->
+        <div id="challenge-container"></div>
+        
+        <!-- Results -->
+        <div id="result-container"></div>
+    </div>
+
+    <script>
+        // ===== GAME STATE MANAGER =====
+        class GameStateManager {
+            constructor(initialStates = {}) {
+                this.states = { ...initialStates };
+                this.listeners = [];
+            }
+            
+            updateState(key, value) {
+                this.states[key] = Math.max(0, (this.states[key] || 0) + value);
+                this.notifyListeners();
+            }
+            
+            setState(key, value) {
+                this.states[key] = Math.max(0, value);
+                this.notifyListeners();
+            }
+            
+            getState(key) {
+                return this.states[key] || 0;
+            }
+            
+            getAllStates() {
+                return { ...this.states };
+            }
+            
+            resetStates() {
+                Object.keys(this.states).forEach(key => {
+                    this.states[key] = 0;
+                });
+                this.notifyListeners();
+            }
+            
+            addListener(callback) {
+                this.listeners.push(callback);
+            }
+            
+            notifyListeners() {
+                this.listeners.forEach(callback => callback(this.states));
+            }
+        }
+
+        // ===== CHALLENGE SYSTEM =====
+        class Challenge {
+            constructor(config) {
+                this.description = config.description;
+                this.punishment = config.punishment;
+                this.progression = config.progression;
+                this.id = config.id || Math.random().toString(36).substr(2, 9);
+            }
+            
+            execute(success, stateManager) {
+                const results = [];
+                
+                if (!success && this.punishment) {
+                    this.applyAction(this.punishment, stateManager);
+                    results.push(`Punishment: ${this.getActionDescription(this.punishment)}`);
+                }
+                
+                if (this.progression) {
+                    const shouldApply = this.progression.condition === 'always' || 
+                                      (this.progression.condition === 'ifFailed' && !success) ||
+                                      (this.progression.condition === 'ifSuccess' && success);
+                    
+                    if (shouldApply) {
+                        this.applyAction(this.progression, stateManager);
+                        results.push(`Progression: ${this.getActionDescription(this.progression)}`);
+                    }
+                }
+                
+                return results;
+            }
+            
+            applyAction(action, stateManager) {
+                if (action.type === 'state') {
+                    Object.entries(action.changes).forEach(([key, value]) => {
+                        stateManager.updateState(key, value);
+                    });
+                }
+            }
+            
+            getActionDescription(action) {
+                if (action.type === 'state') {
+                    return Object.entries(action.changes)
+                        .map(([key, value]) => `${value > 0 ? "+" : ""}${value} ${key}`)
+                        .join(', ');
+                }
+                return action.description || 'Unknown action';
+            }
+        }
+
+        // ===== PHASE SYSTEM =====
+        class Phase {
+            constructor(config) {
+                this.name = config.name;
+                this.setup = config.setup;
+                this.challenges = config.challenges.map(c => new Challenge(c));
+                this.endState = config.endState;
+                this.setupActions = config.setupActions || [];
+                this.currentChallenge = 0;
+            }
+            
+            applySetup(stateManager) {
+                this.setupActions.forEach(action => {
+                    if (action.type === 'state') {
+                        Object.entries(action.changes).forEach(([key, value]) => {
+                            stateManager.updateState(key, value);
+                        });
+                    }
+                });
+            }
+            
+            getCurrentChallenge() {
+                return this.challenges[this.currentChallenge];
+            }
+            
+            isComplete() {
+                return this.currentChallenge >= this.challenges.length;
+            }
+            
+            nextChallenge() {
+                this.currentChallenge++;
+            }
+            
+            reset() {
+                this.currentChallenge = 0;
+            }
+        }
+
+        // ===== MAIN GAME MANAGER =====
+        class GameManager {
+            constructor() {
+                this.stateManager = new GameStateManager();
+                this.phases = [];
+                this.currentPhaseIndex = 0;
+                this.totalPhases = 0;
+                
+                this.stateManager.addListener(states => this.updateStateDisplay(states));
+                this.loadDefaultConfiguration();
+            }
+            
+            loadDefaultConfiguration() {
+                const defaultStates = {
+                    'mathKnowledge': 0,
+                    'scienceKnowledge': 0,
+                    'historyKnowledge': 0,
+                    'focus': 0,
+                    'energy': 0
+                };
+                
+                this.stateManager.states = defaultStates;
+                this.phases = this.createDefaultPhases();
+                this.totalPhases = this.phases.length;
+                this.initializeGame();
+            }
+            
+            createDefaultPhases() {
+                return [
+                    new Phase({
+                        name: "Math Study Session",
+                        setup: "Review math notes and prepare for solving equations.",
+                        setupActions: [
+                            {
+                                type: 'state',
+                                changes: {
+                                    'mathKnowledge': 5,
+                                    'focus': 5
+                                }
+                            }
+                        ],
+                        challenges: [
+                            {
+                                description: "Solve the equation: 2x + 3 = 7",
+                                punishment: { type: 'state', changes: { 'focus': -5 } },
+                                progression: { type: 'state', changes: { 'mathKnowledge': 10 }, condition: 'ifSuccess' }
+                            },
+                            {
+                                description: "Calculate the area of a circle with radius 5",
+                                punishment: { type: 'state', changes: { 'focus': -5 } },
+                                progression: { type: 'state', changes: { 'mathKnowledge': 10 }, condition: 'ifSuccess' }
+                            }
+                        ],
+                        endState: "Math knowledge improved."
+                    }),
+                    new Phase({
+                        name: "Science Experiment",
+                        setup: "Set up the lab equipment for the experiment.",
+                        setupActions: [
+                            {
+                                type: 'state',
+                                changes: {
+                                    'scienceKnowledge': 5,
+                                    'energy': 5
+                                }
+                            }
+                        ],
+                        challenges: [
+                            {
+                                description: "Mix the chemicals according to the procedure",
+                                punishment: { type: 'state', changes: { 'energy': -5 } },
+                                progression: { type: 'state', changes: { 'scienceKnowledge': 10 }, condition: 'ifSuccess' }
+                            },
+                            {
+                                description: "Observe and record the reaction results",
+                                punishment: { type: 'state', changes: { 'energy': -5 } },
+                                progression: { type: 'state', changes: { 'scienceKnowledge': 10 }, condition: 'ifSuccess' }
+                            }
+                        ],
+                        endState: "Science knowledge enhanced."
+                    }),
+                    new Phase({
+                        name: "History Quiz",
+                        setup: "Review historical dates and events.",
+                        setupActions: [
+                            {
+                                type: 'state',
+                                changes: {
+                                    'historyKnowledge': 5,
+                                    'focus': 5
+                                }
+                            }
+                        ],
+                        challenges: [
+                            {
+                                description: "Answer: When did World War II end?",
+                                punishment: { type: 'state', changes: { 'focus': -5 } },
+                                progression: { type: 'state', changes: { 'historyKnowledge': 10 }, condition: 'ifSuccess' }
+                            },
+                            {
+                                description: "Answer: Who was the first president of the USA?",
+                                punishment: { type: 'state', changes: { 'focus': -5 } },
+                                progression: { type: 'state', changes: { 'historyKnowledge': 10 }, condition: 'ifSuccess' }
+                            }
+                        ],
+                        endState: "History knowledge increased."
+                    })
+                ];
+            }
+            
+            initializeGame() {
+                this.currentPhaseIndex = 0;
+                if (this.phases.length > 0) {
+                    this.phases[0].applySetup(this.stateManager);
+                    this.updatePhaseDisplay();
+                    this.renderCurrentChallenge();
+                }
+                this.updateProgressBar();
+            }
+            
+            updateStateDisplay(states) {
+                const container = document.getElementById('state-container');
+                container.innerHTML = '';
+                
+                Object.entries(states).forEach(([key, value]) => {
+                    const card = document.createElement('div');
+                    card.className = 'state-card';
+                    const displayKey = key.replace(/([A-Z])/g, ' $1').trim();
+                    card.innerHTML = `<h4>${displayKey}</h4><p><strong>${Math.round(value)}</strong></p>`;
+                    container.appendChild(card);
+                });
+            }
+            
+            updatePhaseDisplay() {
+                document.getElementById('current-phase').textContent = this.currentPhaseIndex + 1;
+                document.getElementById('total-phases').textContent = this.totalPhases;
+            }
+            
+            updateProgressBar() {
+                const progress = ((this.currentPhaseIndex + 1) / this.totalPhases) * 100;
+                document.getElementById('progress-bar').style.width = `${progress}%`;
+            }
+            
+            renderCurrentChallenge() {
+                if (this.currentPhaseIndex >= this.phases.length) {
+                    this.renderGameComplete();
+                    return;
+                }
+                
+                const phase = this.phases[this.currentPhaseIndex];
+                const challenge = phase.getCurrentChallenge();
+                
+                if (!challenge) {
+                    this.nextPhase();
+                    return;
+                }
+                
+                const container = document.getElementById('challenge-container');
+                container.innerHTML = `
+                    <h2>${phase.name}</h2>
+                    <p><strong>Setup:</strong> ${phase.setup}</p>
+                    <div class="challenge">
+                        <h3>Challenge ${phase.currentChallenge + 1}</h3>
+                        <p><strong>Description:</strong> ${challenge.description}</p>
+                        <button onclick="gameManager.handleChallengeResult(true)">✅ Success</button>
+                        <button onclick="gameManager.handleChallengeResult(false)">❌ Fail</button>
+                    </div>
+                `;
+            }
+            
+            handleChallengeResult(success) {
+                const phase = this.phases[this.currentPhaseIndex];
+                const challenge = phase.getCurrentChallenge();
+                
+                const results = challenge.execute(success, this.stateManager);
+                this.displayResults(results, success);
+                
+                phase.nextChallenge();
+                
+                if (phase.isComplete()) {
+                    this.nextPhase();
+                } else {
+                    this.renderCurrentChallenge();
+                }
+            }
+            
+            nextPhase() {
+                const phase = this.phases[this.currentPhaseIndex];
+                this.displayResults([`Phase Complete: ${phase.endState}`], true);
+                
+                this.currentPhaseIndex++;
+                this.updatePhaseDisplay();
+                this.updateProgressBar();
+                
+                if (this.currentPhaseIndex < this.phases.length) {
+                    this.phases[this.currentPhaseIndex].applySetup(this.stateManager);
+                    this.renderCurrentChallenge();
+                } else {
+                    this.renderGameComplete();
+                }
+            }
+            
+            displayResults(results, success) {
+                const container = document.getElementById('result-container');
+                const resultDiv = document.createElement('div');
+                resultDiv.innerHTML = `
+                    <p><strong>${success ? '✅' : '❌'} Result:</strong></p>
+                    ${results.map(result => `<p>• ${result}</p>`).join('')}
+                `;
+                container.appendChild(resultDiv);
+                container.scrollTop = container.scrollHeight;
+            }
+            
+            renderGameComplete() {
+                document.getElementById('challenge-container').innerHTML = `
+                    <div class="challenge">
+                        <h2>🎉 Study Adventure Complete!</h2>
+                        <p>Congratulations! You've completed your study journey.</p>
+                        <button onclick="gameManager.resetGame()">🔄 Play Again</button>
+                    </div>
+                `;
+            }
+            
+            resetGame() {
+                this.stateManager.resetStates();
+                this.currentPhaseIndex = 0;
+                this.phases.forEach(phase => phase.reset());
+                document.getElementById('result-container').innerHTML = '';
+                this.initializeGame();
+            }
+            
+            showConfig() {
+                document.getElementById('config-editor').classList.remove('hidden');
+                this.renderStates();
+                this.renderPhases();
+                showTab('states');
+            }
+            
+            hideConfig() {
+                document.getElementById('config-editor').classList.add('hidden');
+            }
+            
+            renderStates() {
+                const statesList = document.getElementById('states-list');
+                statesList.innerHTML = '';
+                Object.entries(this.stateManager.states).forEach(([key, value]) => {
+                    const stateItem = document.createElement('div');
+                    stateItem.className = 'state-item';
+                    stateItem.innerHTML = `
+                        <label>State Name: <input type="text" class="state-key" value="${key}"></label>
+                        <label>Value: <input type="number" class="state-value" value="${value}"></label>
+                        <button onclick="removeState(this)">Remove</button>
+                    `;
+                    statesList.appendChild(stateItem);
+                });
+            }
+            
+            renderPhases() {
+                const phasesList = document.getElementById('phases-list');
+                phasesList.innerHTML = '';
+                this.phases.forEach((phase, index) => {
+                    const phaseItem = document.createElement('div');
+                    phaseItem.className = 'phase-item';
+                    phaseItem.innerHTML = `
+                        <h4>Phase ${index + 1}</h4>
+                        <label>Name: <input type="text" class="phase-name" value="${phase.name}"></label>
+                        <label>Setup: <textarea class="setup-description">${phase.setup}</textarea></label>
+                        <div class="setup-actions">
+                            <h5>Setup Actions</h5>
+                            <div class="actions-list"></div>
+                            <button onclick="addStateChange(this)">Add State Change</button>
+                        </div>
+                        <div class="challenges">
+                            <h5>Challenges</h5>
+                            <div class="challenges-list"></div>
+                            <button onclick="addChallenge(this)">Add Challenge</button>
+                        </div>
+                        <label>End State: <textarea class="end-state">${phase.endState}</textarea></label>
+                        <button onclick="removePhase(this)">Remove Phase</button>
+                    `;
+                    
+                    const actionsList = phaseItem.querySelector('.actions-list');
+                    phase.setupActions.forEach(action => {
+                        if (action.type === 'state') {
+                            Object.entries(action.changes).forEach(([state, value]) => {
+                                const stateChange = document.createElement('div');
+                                stateChange.className = 'state-change';
+                                stateChange.innerHTML = `
+                                    <select class="state-select">
+                                        ${Object.keys(this.stateManager.states).map(s => `<option value="${s}" ${s === state ? 'selected' : ''}>${s}</option>`).join('')}
+                                    </select>
+                                    <input type="number" class="change-value" value="${value}">
+                                    <button onclick="removeStateChange(this)">Remove</button>
+                                `;
+                                actionsList.appendChild(stateChange);
+                            });
+                        }
+                    });
+                    
+                    const challengesList = phaseItem.querySelector('.challenges-list');
+                    phase.challenges.forEach(challenge => {
+                        const challengeItem = document.createElement('div');
+                        challengeItem.className = 'challenge-item';
+                        challengeItem.innerHTML = `
+                            <label>Description: <textarea class="challenge-description">${challenge.description}</textarea></label>
+                            <div class="punishment action">
+                                <h6>Punishment</h6>
+                                <div class="state-changes"></div>
+                                <button onclick="addStateChange(this)">Add State Change</button>
+                            </div>
+                            <div class="progression action">
+                                <h6>Progression</h6>
+                                <label>Condition: 
+                                    <select class="progression-condition">
+                                        <option value="always" ${challenge.progression.condition === 'always' ? 'selected' : ''}>Always</option>
+                                        <option value="ifFailed" ${challenge.progression.condition === 'ifFailed' ? 'selected' : ''}>If Failed</option>
+                                        <option value="ifSuccess" ${challenge.progression.condition === 'ifSuccess' ? 'selected' : ''}>If Success</option>
+                                    </select>
+                                </label>
+                                <div class="state-changes"></div>
+                                <button onclick="addStateChange(this)">Add State Change</button>
+                            </div>
+                            <button onclick="removeChallenge(this)">Remove Challenge</button>
+                        `;
+                        
+                        const punishmentChanges = challengeItem.querySelector('.punishment .state-changes');
+                        if (challenge.punishment && challenge.punishment.type === 'state') {
+                            Object.entries(challenge.punishment.changes).forEach(([state, value]) => {
+                                const stateChange = document.createElement('div');
+                                stateChange.className = 'state-change';
+                                stateChange.innerHTML = `
+                                    <select class="state-select">
+                                        ${Object.keys(this.stateManager.states).map(s => `<option value="${s}" ${s === state ? 'selected' : ''}>${s}</option>`).join('')}
+                                    </select>
+                                    <input type="number" class="change-value" value="${value}">
+                                    <button onclick="removeStateChange(this)">Remove</button>
+                                `;
+                                punishmentChanges.appendChild(stateChange);
+                            });
+                        }
+                        
+                        const progressionChanges = challengeItem.querySelector('.progression .state-changes');
+                        if (challenge.progression && challenge.progression.type === 'state') {
+                            Object.entries(challenge.progression.changes).forEach(([state, value]) => {
+                                const stateChange = document.createElement('div');
+                                stateChange.className = 'state-change';
+                                stateChange.innerHTML = `
+                                    <select class="state-select">
+                                        ${Object.keys(this.stateManager.states).map(s => `<option value="${s}" ${s === state ? 'selected' : ''}>${s}</option>`).join('')}
+                                    </select>
+                                    <input type="number" class="change-value" value="${value}">
+                                    <button onclick="removeStateChange(this)">Remove</button>
+                                `;
+                                progressionChanges.appendChild(stateChange);
+                            });
+                        }
+                        
+                        challengesList.appendChild(challengeItem);
+                    });
+                    
+                    phasesList.appendChild(phaseItem);
+                });
+            }
+            
+            applyConfig() {
+                try {
+                    const states = getStatesFromUI();
+                    const phases = getPhasesFromUI();
+                    const config = {
+                        states: states,
+                        phases: phases
+                    };
+                    this.setConfiguration(config);
+                    this.hideConfig();
+                    alert('Configuration applied successfully!');
+                } catch (error) {
+                    alert('Error applying configuration: ' + error.message);
+                }
+            }
+            
+            getConfiguration() {
+                return {
+                    states: this.stateManager.getAllStates(),
+                    phases: this.phases.map(phase => ({
+                        name: phase.name,
+                        setup: phase.setup,
+                        setupActions: phase.setupActions,
+                        challenges: phase.challenges.map(challenge => ({
+                            description: challenge.description,
+                            punishment: challenge.punishment,
+                            progression: challenge.progression
+                        })),
+                        endState: phase.endState
+                    }))
+                };
+            }
+            
+            setConfiguration(config) {
+                try {
+                    this.stateManager.states = config.states;
+                    this.phases = config.phases.map(phaseConfig => new Phase(phaseConfig));
+                    this.totalPhases = this.phases.length;
+                    this.resetGame();
+                } catch (error) {
+                    throw new Error('Invalid configuration: ' + error.message);
+                }
+            }
+            
+            exportConfiguration() {
+                const config = this.getConfiguration();
+                const jsonString = JSON.stringify(config, null, 2);
+                const blob = new Blob([jsonString], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'study-adventure-config.json';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            }
+            
+            importConfiguration(event) {
+                const file = event.target.files[0];
+                if (!file) return;
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    try {
+                        const config = JSON.parse(e.target.result);
+                        this.setConfiguration(config);
+                        alert('Configuration imported successfully!');
+                    } catch (error) {
+                        alert('Error importing configuration: ' + error.message);
+                    }
+                };
+                reader.readAsText(file);
+                event.target.value = null;
+            }
+            
+            loadPreset(presetName) {
+                if (presetName === 'relaxing') {
+                    this.loadDefaultConfiguration();
+                } else if (presetName === 'challenging') {
+                    const challengingPhases = this.createDefaultPhases();
+                    challengingPhases.forEach(phase => {
+                        phase.challenges.forEach(challenge => {
+                            if (challenge.punishment && challenge.punishment.type === 'state') {
+                                Object.keys(challenge.punishment.changes).forEach(key => {
+                                    challenge.punishment.changes[key] *= 2;
+                                });
+                            }
+                        });
+                    });
+                    this.phases = challengingPhases;
+                    this.resetGame();
+                }
+            }
+        }
+
+        const gameManager = new GameManager();
+
+        // Helper Functions
+        function showTab(tabName) {
+            document.getElementById('states-tab').classList.add('hidden');
+            document.getElementById('phases-tab').classList.add('hidden');
+            document.getElementById(tabName + '-tab').classList.remove('hidden');
+        }
+
+        function addState() {
+            const statesList = document.getElementById('states-list');
+            const newStateItem = document.createElement('div');
+            newStateItem.className = 'state-item';
+            newStateItem.innerHTML = `
+                <label>State Name: <input type="text" class="state-key" value="newState"></label>
+                <label>Value: <input type="number" class="state-value" value="0"></label>
+                <button onclick="removeState(this)">Remove</button>
+            `;
+            statesList.appendChild(newStateItem);
+        }
+
+        function removeState(button) {
+            button.parentElement.remove();
+        }
+
+        function addPhase() {
+            const phasesList = document.getElementById('phases-list');
+            const newPhaseItem = document.createElement('div');
+            newPhaseItem.className = 'phase-item';
+            newPhaseItem.innerHTML = `
+                <h4>New Phase</h4>
+                <label>Name: <input type="text" class="phase-name" value="New Phase"></label>
+                <label>Setup: <textarea class="setup-description">Enter setup description...</textarea></label>
+                <div class="setup-actions">
+                    <h5>Setup Actions</h5>
+                    <div class="actions-list"></div>
+                    <button onclick="addStateChange(this)">Add State Change</button>
+                </div>
+                <div class="challenges">
+                    <h5>Challenges</h5>
+                    <div class="challenges-list"></div>
+                    <button onclick="addChallenge(this)">Add Challenge</button>
+                </div>
+                <label>End State: <textarea class="end-state">Enter end state description...</textarea></label>
+                <button onclick="removePhase(this)">Remove Phase</button>
+            `;
+            phasesList.appendChild(newPhaseItem);
+        }
+
+        function removePhase(button) {
+            button.parentElement.remove();
+        }
+
+        function addStateChange(button) {
+            const stateChangesDiv = button.previousElementSibling;
+            const newStateChange = document.createElement('div');
+            newStateChange.className = 'state-change';
+            newStateChange.innerHTML = `
+                <select class="state-select">
+                    ${Object.keys(gameManager.stateManager.states).map(s => `<option value="${s}">${s}</option>`).join('')}
+                </select>
+                <input type="number" class="change-value" value="0">
+                <button onclick="removeStateChange(this)">Remove</button>
+            `;
+            stateChangesDiv.appendChild(newStateChange);
+        }
+
+        function removeStateChange(button) {
+            button.parentElement.remove();
+        }
+
+        function addChallenge(button) {
+            const challengesList = button.previousElementSibling;
+            const newChallenge = document.createElement('div');
+            newChallenge.className = 'challenge-item';
+            newChallenge.innerHTML = `
+                <label>Description: <textarea class="challenge-description">Enter challenge description...</textarea></label>
+                <div class="punishment action">
+                    <h6>Punishment</h6>
+                    <div class="state-changes"></div>
+                    <button onclick="addStateChange(this)">Add State Change</button>
+                </div>
+                <div class="progression action">
+                    <h6>Progression</h6>
+                    <label>Condition: 
+                        <select class="progression-condition">
+                            <option value="always">Always</option>
+                            <option value="ifFailed">If Failed</option>
+                            <option value="ifSuccess">If Success</option>
+                        </select>
+                    </label>
+                    <div class="state-changes"></div>
+                    <button onclick="addStateChange(this)">Add State Change</button>
+                </div>
+                <button onclick="removeChallenge(this)">Remove Challenge</button>
+            `;
+            challengesList.appendChild(newChallenge);
+        }
+
+        function removeChallenge(button) {
+            button.parentElement.remove();
+        }
+
+        function getStatesFromUI() {
+            const states = {};
+            document.querySelectorAll('#states-list .state-item').forEach(item => {
+                const key = item.querySelector('.state-key').value.trim();
+                const value = parseFloat(item.querySelector('.state-value').value) || 0;
+                if (key) {
+                    states[key] = value;
+                }
+            });
+            return states;
+        }
+
+        function getPhasesFromUI() {
+            const phases = [];
+            document.querySelectorAll('#phases-list .phase-item').forEach(phaseItem => {
+                const name = phaseItem.querySelector('.phase-name').value;
+                const setup = phaseItem.querySelector('.setup-description').value;
+                const endState = phaseItem.querySelector('.end-state').value;
+                
+                const setupChanges = {};
+                phaseItem.querySelector('.actions-list').querySelectorAll('.state-change').forEach(stateChange => {
+                    const state = stateChange.querySelector('.state-select').value;
+                    const value = parseFloat(stateChange.querySelector('.change-value').value) || 0;
+                    setupChanges[state] = value;
+                });
+                const setupActions = Object.keys(setupChanges).length ? [{ type: 'state', changes: setupChanges }] : [];
+                
+                const challenges = [];
+                phaseItem.querySelector('.challenges-list').querySelectorAll('.challenge-item').forEach(challengeItem => {
+                    const description = challengeItem.querySelector('.challenge-description').value;
+                    
+                    const punishmentChanges = {};
+                    challengeItem.querySelector('.punishment .state-changes').querySelectorAll('.state-change').forEach(stateChange => {
+                        const state = stateChange.querySelector('.state-select').value;
+                        const value = parseFloat(stateChange.querySelector('.change-value').value) || 0;
+                        punishmentChanges[state] = value;
+                    });
+                    const punishment = Object.keys(punishmentChanges).length ? { type: 'state', changes: punishmentChanges } : null;
+                    
+                    const progressionChanges = {};
+                    challengeItem.querySelector('.progression .state-changes').querySelectorAll('.state-change').forEach(stateChange => {
+                        const state = stateChange.querySelector('.state-select').value;
+                        const value = parseFloat(stateChange.querySelector('.change-value').value) || 0;
+                        progressionChanges[state] = value;
+                    });
+                    const condition = challengeItem.querySelector('.progression-condition').value;
+                    const progression = Object.keys(progressionChanges).length ? { type: 'state', changes: progressionChanges, condition: condition } : null;
+                    
+                    challenges.push({
+                        description,
+                        punishment,
+                        progression
+                    });
+                });
+                
+                phases.push({
+                    name,
+                    setup,
+                    setupActions,
+                    challenges,
+                    endState
+                });
+            });
+            return phases;
+        }
+    </script>
+</body>
+</html>
