@@ -546,8 +546,7 @@
                     <p><strong>${success ? '✅' : '❌'} Result:</strong></p>
                     ${results.map(result => `<p>• ${result}</p>`).join('')}
                 `;
-                container.appendChild(resultDiv);
-                container.scrollTop = container.scrollHeight;
+                container.insertBefore(resultDiv, container.firstChild);
             }
             
             renderGameComplete() {
