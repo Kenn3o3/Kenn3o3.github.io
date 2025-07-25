@@ -11,7 +11,7 @@ I am **Wong Lik Hang Kenny** (Chinese name: **王力恒**), a recent graduate wi
 
 My research interests lie at the intersection of Deep Learning, 3D Computer Vision, Embodied AI, Robotics, and Continual Learning. I am currently working on continual learning (lifelong learning), which I believe is essential for developing generalist Embodied AI Agents capable of functioning in real-world environments.
 
-***"Life is about adapting to challenges and remembering the lessons they teach."***
+***"Adapting to challenges and remembering the lessons they teach."***
 
 You can view my CV ([here](/files/resume.pdf)). Feel free to reach out to me at `klhwong3 [at] outlook [dot] com`—I’d love to collaborate on something exciting in the future! :>
 
