@@ -21,7 +21,7 @@ repository               : "Kenn3o3.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.jpg"
+  avatar           : "profile_pic.jpg"
   name             : "Wong Lik Hang Kenny"
   pronouns         : # example: "she/her"  
   bio              : "I am an incoming MSc Computer Science student at CUHK (Fall 2025). My research interests lie in Deep Learning, 3D Computer Vision, Embodied AI, Robotics, Continual Learning"
