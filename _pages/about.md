@@ -11,8 +11,6 @@ I am Kenny Wong Lik Hang (王力恒). I received my **BSc in Computer Science** 
 
 I am an **MPhil student in Computer Science and Engineering** at **CUHK** (from **1 August 2026 to 31 July 2028**), under the supervision of [**Prof. Dou Qi**](https://www.cse.cuhk.edu.hk/~qdou/). My research interest is in Embodied AI and Robotics.
 
-
-
 You can view my CV ([here](/files/resume.pdf)). Feel free to reach out to me at `klhwong3 [at] outlook [dot] com`—I’d love to collaborate on something exciting in the future! :>
 
 <a href="https://visitorbadge.io/status?path=https%3A%2F%2Fkenn3o3.github.io%2F"><img src="https://api.visitorbadge.io/api/combined?path=https%3A%2F%2Fkenn3o3.github.io%2F&labelColor=%23d9e3f0&countColor=%232ccce4" /></a>
