@@ -23,12 +23,12 @@ author:
   # Biographic information
   avatar           : "profile_pic.jpg"
   name             : "Wong Lik Hang Kenny"
-  pronouns         : # example: "she/her"  
-  bio              : "I am an incoming MSc Computer Science student at CUHK (Fall 2025). My research interests lie in Deep Learning, 3D Computer Vision, Embodied AI, Robotics, Continual Learning"
+  pronouns         : "he/him"
+  bio              : "I am a MPhil student at CUHK, supervised by Prof. Dou Qi. My research interests lie in Embodied AI and Robotics"
   location         : "Hong Kong SAR"
-  employer         : "City University of Hong Kong"
+  employer         : "The Chinese University of Hong Kong"
   uri              : # URL
-  email            : "klhwong3-c@my.cityu.edu.hk" 
+  email            : "1155238348@link.cuhk.edu.hk" 
 
   # Academic websites
   arxiv            : # URL - Update with the correct link to your profile
