@@ -7,9 +7,11 @@ redirect_from:
   - /about.html
 ---
 
-I am **Wong Lik Hang Kenny** (Chinese name: **王力恒**), a recent graduate with a **BSc in Computer Science** from **City University of Hong Kong (CityUHK)** in 2025. I am excited to continue my academic journey in the **MSc in Computer Science** program at **The Chinese University of Hong Kong (CUHK)** starting in Fall 2025.
+I am **Wong Lik Hang Kenny** (Chinese name: **王力恒**), a recent graduate with a **BSc in Computer Science** from **City University of Hong Kong (CityUHK)** in 2025. I am graduating soon from the **MSc in Computer Science and Engineering** program at **The Chinese University of Hong Kong (CUHK)**.
 
-My research interests lie at the intersection of Deep Learning, 3D Computer Vision, Embodied AI, Robotics, and Continual Learning. I am currently working on continual learning (lifelong learning), which I believe is essential for developing generalist Embodied AI Agents capable of functioning in real-world environments.
+I am currently admitted to the **MPhil in Computer Science and Engineering** program at **CUHK** from **1 August 2026 to 31 July 2028**, supervised by [**Prof. Dou Qi**](https://www.cse.cuhk.edu.hk/~qdou/).
+
+**Keywords:** Embodied AI, Robotics
 
 ***"Adapting to challenges and remembering the lessons they teach."***
 
