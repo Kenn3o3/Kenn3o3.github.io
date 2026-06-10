@@ -7,13 +7,11 @@ redirect_from:
   - /about.html
 ---
 
-I am **Wong Lik Hang Kenny** (Chinese name: **王力恒**), a recent graduate with a **BSc in Computer Science** from **City University of Hong Kong (CityUHK)** in 2025. I am graduating soon from the **MSc in Computer Science and Engineering** program at **The Chinese University of Hong Kong (CUHK)**.
+I am Kenny Wong Lik Hang (王力恒). I received my **BSc in Computer Science** from **City University of Hong Kong (CityUHK)** in 2025 and my **MSc in Computer Science and Engineering** from **The Chinese University of Hong Kong (CUHK)** in 2026.
 
-I am currently admitted to the **MPhil in Computer Science and Engineering** program at **CUHK** from **1 August 2026 to 31 July 2028**, supervised by [**Prof. Dou Qi**](https://www.cse.cuhk.edu.hk/~qdou/).
+I am an **MPhil student in Computer Science and Engineering** at **CUHK** (from **1 August 2026 to 31 July 2028**), under the supervision of [**Prof. Dou Qi**](https://www.cse.cuhk.edu.hk/~qdou/). My research interest is in Embodied AI and Robotics.
 
-**Keywords:** Embodied AI, Robotics
 
-***"Adapting to challenges and remembering the lessons they teach."***
 
 You can view my CV ([here](/files/resume.pdf)). Feel free to reach out to me at `klhwong3 [at] outlook [dot] com`—I’d love to collaborate on something exciting in the future! :>
 
