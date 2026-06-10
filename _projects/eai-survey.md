@@ -2,7 +2,7 @@
 layout: single
 title: "A Survey of Robotic Navigation and Manipulation with Physics Simulators in the Era of Embodied AI"
 authors: "WONG, Lik Hang Kenny"
-venue: arXiv
+venue: Under Review
 featured: true
 collection: projects
 permalink: /projects/eai-survey
@@ -12,7 +12,7 @@ thumbnail: /images/eai-survey/thumbnail.png
 paper_url: https://arxiv.org/abs/2505.01458
 ---
 
-Preprint: [https://arxiv.org/abs/2505.01458](https://arxiv.org/abs/2505.01458)
+Under Review: [https://arxiv.org/abs/2505.01458](https://arxiv.org/abs/2505.01458)
 
 Some Chinese version (reposted by others): 
 - [具身智能时代基于物理模拟器的机器人导航与操控研究 (CSDN)](https://blog.csdn.net/yorkhunter/article/details/148041545)
@@ -25,7 +25,7 @@ Some Chinese version (reposted by others):
 @article{wong2025survey,
   title={A Survey of Robotic Navigation and Manipulation with Physics Simulators in the Era of Embodied AI},
   author={Wong, Lik Hang Kenny and Kang, Xueyang and Bai, Kaixin and Zhang, Jianwei},
-  journal={arXiv preprint arXiv:2505.01458},
+  journal={Under Review},
   year={2025}
 }
 ```
