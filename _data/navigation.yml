@@ -21,9 +21,6 @@ main:
   - title: "Projects"
     url: /projects/
 
-  - title: "Learning"
-    url: /learning/
-
   - title: "Blog Posts"
     url: /blogs/
     

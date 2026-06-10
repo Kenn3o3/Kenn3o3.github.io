@@ -225,9 +225,6 @@ collections: #change here
   blogs:
     output: true
     permalink: /:collection/:path/
-  learning:
-    output: true
-    permalink: /:collection/:path/
   talks:
     output: true
     permalink: /:collection/:path/
@@ -275,15 +272,6 @@ defaults: #change here
   - scope:
       path: ""
       type: projects
-    values:
-      layout: single
-      author_profile: true
-      share: true
-      comment: true
-  # _learning
-  - scope:
-      path: ""
-      type: learning
     values:
       layout: single
       author_profile: true
