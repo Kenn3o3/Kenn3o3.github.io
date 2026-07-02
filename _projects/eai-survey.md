@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "A Survey of Robotic Navigation and Manipulation with Physics Simulators in the Era of Embodied AI"
-authors: "WONG, Lik Hang Kenny"
+authors: "Wong Lik Hang, Kenny, Xueyang Kang, Kaixin Bai, Jianwei Zhang"
 venue: Under Review
 featured: true
 collection: projects
