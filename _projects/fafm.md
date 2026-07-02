@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "Frequency-Aware Flow Matching for Continuous and Consistent Robotic Action Generation"
-authors: "Jianing Guo, Fangzheng Chen, Zihao Mao, **Wong Lik Hang Kenny**, Zhenhong Wu, Yu Li, Yishuai Cai, Yuanpei Chen, Yikun Ban, Kai Chen, Qi Dou, Yaodong Yang, Xianglong Liu, Huijie Zhao, Simin Li"
+authors: "Jianing Guo, Fangzheng Chen, Zihao Mao, Wong Lik Hang Kenny, Zhenhong Wu, Yu Li, Yishuai Cai, Yuanpei Chen, Yikun Ban, Kai Chen, Qi Dou, Yaodong Yang, Xianglong Liu, Huijie Zhao, Simin Li"
 venue: Under Review
 featured: true
 collection: projects
