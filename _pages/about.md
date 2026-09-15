@@ -24,30 +24,34 @@ You can view my CV ([here](/files/resume.pdf)). Feel free to reach out to me at 
 ## Project Highlights
 Below are some of my research projects:
 
-<table style="width: 100%; border: none;">
+<table class="project-highlights">
   {% assign sorted_projects = site.projects | sort: 'highlight_order' | reverse %}
   {% for project in sorted_projects %}
-    <tr style="width: 100%; border: none;">
-    <td width="20%" style="padding: 10px 30px 10px 10px; border: none;">
-      <div class="container">
-        <img src="{{ project.thumbnail }}" width="180px" style="box-shadow: 4px 4px 4px #888888; margin-left: 10px;">
+    <tr class="project-row">
+    <td class="project-thumbnail-cell">
+      <div class="project-thumbnail">
+        <img src="{{ project.thumbnail }}" class="project-thumbnail-image" alt="">
       </div>
     </td>
-    <td style="padding: 10px 30px 10px 10px; border: none;">
-      <a href="{{ project.url }}" style="font-size: 15px; font-weight: bold;">{{ project.title }}</a>
-      <div style="height: 5px;"></div>
-      <div style="font-size: 12px">{{ project.authors }}</div>
-      <div style="height: 5px;"></div>
-      <div style="font-size: 12px">{{ project.venue }}, {{ project.date | date: "%Y-%m-%d" }}</div>
-      <div style="height: 5px;"></div>
-      <div style="font-size: 12px">
-        {% if project.project_url %}<a href="{{ project.project_url }}" target="_blank">Project Page</a> / {% endif %}
-        {% if project.paper_url %}<a href="{{ project.paper_url }}" target="_blank">Paper</a> / {% endif %}
-        {% if project.poster_url %}<a href="{{ project.poster_url }}" target="_blank">Poster</a> / {% endif %}
-        {% if project.code_url %}<a href="{{ project.code_url }}" target="_blank">Code</a> / {% endif %}
+    <td class="project-details">
+      <a href="{{ project.url }}" class="project-title">{{ project.title }}</a>
+      <div class="project-authors">{{ project.authors }}</div>
+      <div class="project-meta"><em class="project-venue">{{ project.venue }}</em><span class="project-date"> · {{ project.date | date: "%Y-%m-%d" }}</span></div>
+      <div class="project-links">
+        {% if project.project_url %}<a href="{{ project.project_url }}" target="_blank">Project Page</a>{% endif %}
+        {% if project.paper_url %}<a href="{{ project.paper_url }}" target="_blank">Paper</a>{% endif %}
+        {% if project.poster_url %}<a href="{{ project.poster_url }}" target="_blank">Poster</a>{% endif %}
+        {% if project.code_url %}<a href="{{ project.code_url }}" target="_blank">Code</a>{% endif %}
         {% if project.arxiv_url %}<a href="{{ project.arxiv_url }}" target="_blank">arXiv</a>{% endif %}
       </div>
     </td>
   </tr>
   {% endfor %}
 </table>
+
+## Teaching
+
+{% assign teaching_items = site.teaching | sort: 'date' | reverse %}
+{% for item in teaching_items %}
+- **{{ item.title }}** — {{ item.type }}, {{ item.date | date: "%Y %b" }}
+{% endfor %}
