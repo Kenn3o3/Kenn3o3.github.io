@@ -81,11 +81,11 @@ redirect_from:
 
 <div class="education-grid">
   <article class="education-card">
-    <span class="education-mark education-mark--cuhk"><img src="/images/education/cuhk.png" alt="The Chinese University of Hong Kong emblem" loading="lazy"></span>
+    <span class="education-mark education-mark--cuhk"><img src="/images/education/cuhk.png" alt="The Chinese University of Hong Kong emblem"></span>
     <div><h3>The Chinese University of Hong Kong</h3><p>MPhil in Computer Science · Aug 2026–present</p><p>MSc in Computer Science · Sep 2025–Aug 2026</p><strong>MSc Dean's List</strong></div>
   </article>
   <article class="education-card">
-    <span class="education-mark education-mark--cityu"><img src="/images/education/cityuhk.jpg" alt="City University of Hong Kong logo" loading="lazy"></span>
+    <span class="education-mark education-mark--cityu"><img src="/images/education/cityuhk.jpg" alt="City University of Hong Kong logo"></span>
     <div><h3>City University of Hong Kong</h3><p>BSc in Computer Science · 2021–2025</p><strong>Cum laude · Top 15% of the graduating class</strong></div>
   </article>
 </div>
