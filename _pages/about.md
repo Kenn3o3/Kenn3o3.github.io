@@ -51,7 +51,7 @@ redirect_from:
 {% include project-list.html %}
 
 <div class="home-section-heading">
-  <div><p>Background</p><h2>Experience &amp; highlights</h2></div>
+  <div><p>Background</p><h2>Experience</h2></div>
 </div>
 
 <div class="experience-grid">
@@ -62,21 +62,50 @@ redirect_from:
     <p>Developed topological-map navigation methods for legged robot image-goal navigation using Habitat-Sim and Isaac Sim. The research was supported by the National Science Foundation and supervised by Dr. Kwai Wong.</p>
   </article>
   <article class="experience-card">
+    <div class="experience-card__top"><span>Research support</span><time>Jun 2025 - Aug 2026</time></div>
+    <h3>The Chinese University of Hong Kong</h3>
+    <p class="experience-role">Student Helper · Part-time</p>
+    <p>Supported ongoing research projects in 3D computer vision, multimodal large language models, and robotics. Based on-site in Hong Kong.</p>
+  </article>
+  <article class="experience-card">
     <div class="experience-card__top"><span>Industry</span><time>Jul 2023 - May 2024</time></div>
     <h3>The Bank of East Asia</h3>
     <p class="experience-role">Student Programmer, IT Department</p>
     <p>Worked on backend automation and internal software systems using Java, SQL, Linux, sockets, Selenium, and Git within the Technology Innovation and IT Project Management section.</p>
   </article>
-  <article class="experience-card experience-card--accent">
-    <div class="experience-card__top"><span>Recognition</span><time>2023 - 2025</time></div>
-    <h3>Selected achievements</h3>
-    <ul>
-      <li><strong>2nd of 23</strong> in the WACV 2025 Elderly Action Recognition Challenge.</li>
-      <li><strong>Top 5.4%</strong> worldwide in the IEEEXtreme 18.0 programming contest.</li>
-      <li><strong>1st</strong> in AUC and accuracy for a DeepFake detection course project.</li>
-    </ul>
+</div>
+
+<div class="home-section-heading">
+  <div><p>Education</p><h2>Education &amp; honors</h2></div>
+</div>
+
+<div class="education-grid">
+  <article class="education-card">
+    <span class="education-mark">CUHK</span>
+    <div><h3>The Chinese University of Hong Kong</h3><p>MPhil in Computer Science · Aug 2026–present</p><p>MSc in Computer Science · Sep 2025–Aug 2026</p><strong>MSc Dean's List</strong></div>
+  </article>
+  <article class="education-card">
+    <span class="education-mark education-mark--cityu">CityU</span>
+    <div><h3>City University of Hong Kong</h3><p>BSc in Computer Science · 2021–2025</p><strong>Cum laude · Top 15% of the graduating class</strong></div>
   </article>
 </div>
+
+<div class="honors-strip" aria-label="Selected awards and achievements">
+  <span class="honors-label">Awards &amp; achievements</span>
+  <span>Shanghai Commercial Bank Scholarship <small>2024–25</small></span>
+  <span>InfoTech Job Market Driven Scholarships <small>2024–25</small></span>
+  <span>WACV 2025 Elderly Action Recognition Challenge <small>2nd of 23</small></span>
+  <span>IEEEXtreme 18.0 <small>Top 5.4% worldwide</small></span>
+</div>
+
+<div class="home-section-heading">
+  <div><p>Off the clock</p><h2>Beyond research</h2></div>
+</div>
+
+<section class="interests-card" aria-label="Personal interests">
+  <p>When I step away from research, I enjoy staying active and discovering new places. You might find me playing basketball, practicing golf, swimming, or hiking. I also enjoy music, gaming, and exploring new neighborhoods, cities, and trails.</p>
+  <div class="interest-tags"><span>Basketball</span><span>Golf</span><span>Swimming</span><span>Hiking</span><span>Music</span><span>Gaming</span><span>Exploring</span></div>
+</section>
 
 <div class="home-section-heading">
   <div><p>Academic service</p><h2>Teaching</h2></div>

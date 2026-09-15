@@ -567,6 +567,134 @@ a { color: var(--kw-blue); }
   font-weight: 700;
 }
 
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.education-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.15rem;
+  border: 1px solid var(--kw-line);
+  border-radius: 17px;
+  background: #fff;
+
+  h3 {
+    margin: 0 0 0.4rem;
+    color: var(--kw-ink);
+    font-size: 0.95rem;
+    line-height: 1.35;
+  }
+
+  p {
+    margin: 0 0 0.28rem !important;
+    color: #667286;
+    font-size: 0.75rem !important;
+    line-height: 1.45 !important;
+  }
+
+  strong {
+    display: inline-block;
+    margin-top: 0.22rem;
+    color: var(--kw-blue-dark);
+    font-size: 0.73rem;
+  }
+}
+
+.education-mark {
+  display: grid;
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border-radius: 13px;
+  color: #fff;
+  background: linear-gradient(145deg, #1768e5, #25a8cb);
+  font-size: 0.7rem;
+  font-weight: 850;
+  letter-spacing: -0.025em;
+
+  &--cityu {
+    color: #fff;
+    background: linear-gradient(145deg, #8f2030, #be4a4e);
+  }
+}
+
+.honors-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 13px;
+  padding: 1rem;
+  border: 1px solid #d8e4f5;
+  border-radius: 16px;
+  background: linear-gradient(110deg, #f5f9ff, #fff);
+
+  > span:not(.honors-label) {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 5px;
+    min-height: 31px;
+    padding: 5px 9px;
+    border: 1px solid #e0e8f3;
+    border-radius: 9px;
+    color: #445166;
+    background: #fff;
+    font-size: 0.69rem;
+    font-weight: 700;
+  }
+
+  small {
+    color: var(--kw-blue);
+    font-size: 0.64rem;
+    font-weight: 800;
+  }
+}
+
+.honors-label {
+  margin-right: 0.2rem;
+  color: var(--kw-blue);
+  font-size: 0.64rem;
+  font-weight: 850;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.interests-card {
+  padding: 1.2rem 1.3rem;
+  border: 1px solid var(--kw-line);
+  border-radius: 17px;
+  background: #fff;
+
+  > p {
+    margin: 0 0 0.9rem !important;
+    color: #556276;
+    font-size: 0.88rem !important;
+    line-height: 1.65 !important;
+  }
+}
+
+.interest-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+
+  span {
+    padding: 5px 10px;
+    border: 1px solid #dce6f3;
+    border-radius: 999px;
+    color: #4c5b70;
+    background: #f7faff;
+    font-size: 0.69rem;
+    font-weight: 700;
+  }
+}
+
 .teaching-list {
   li {
     position: relative;
@@ -791,6 +919,7 @@ a { color: var(--kw-blue); }
   }
 
   .experience-grid { grid-template-columns: 1fr; }
+  .education-grid { grid-template-columns: 1fr; }
 }
 
 @media screen and (max-width: 600px) {
