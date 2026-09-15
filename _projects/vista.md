@@ -1,14 +1,14 @@
 ---
 layout: single
 title: "Equivariant Visual-Tactile Diffusion Policy for Contact-Rich Manipulation"
-authors: "WONG Lik Hang Kenny, Yiyao Ma, Xiu-Shen Wei, Zelong Tan, Zhuheng Song, Dongsheng Xie, Kai Chen, Qi Dou"
+authors: '<strong><u>WONG Lik Hang Kenny</u></strong>, Yiyao Ma, Xiu-Shen Wei, Zelong Tan, Zhuheng Song, Dongsheng Xie, Kai Chen, Qi Dou'
 venue: Conference on Robot Learning (CoRL 2026)
 highlight_order: 3
 featured: true
 collection: projects
 permalink: /projects/vista
 excerpt: "VISTA is an equivariant visuotactile diffusion policy for data-efficient and spatially robust contact-rich manipulation."
-date: 2026-09-15
+date: 2026-09-04
 thumbnail: /images/vista/method.png
 project_url: https://vista-paper.github.io/
 code_url: https://github.com/Kenn3o3/Vista
