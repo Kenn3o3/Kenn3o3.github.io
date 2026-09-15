@@ -7,7 +7,7 @@
 main:
 
   - title: "Home"
-    utl: /
+    url: /
 
   # - title: "Publications"
     # url: /publications/

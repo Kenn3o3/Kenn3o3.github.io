@@ -5,8 +5,12 @@ permalink: /teaching/
 author_profile: true
 ---
 
-{% include base_path %}
-
-{% for post in site.teaching reversed %}
-  {% include archive-single.html %}
+<ul class="teaching-list teaching-list--page">
+{% assign teaching_items = site.teaching | sort: 'date' | reverse %}
+{% for item in teaching_items %}
+  <li>
+    <a class="teaching-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+    <div class="teaching-meta">{{ item.type }} · {{ item.venue }} · {{ item.date | date: "%b %Y" }}</div>
+  </li>
 {% endfor %}
+</ul>

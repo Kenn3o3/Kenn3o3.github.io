@@ -7,51 +7,45 @@ redirect_from:
   - /about.html
 ---
 
-I am Kenny Wong Lik Hang (王力恒). I received my **BSc in Computer Science** from **City University of Hong Kong (CityUHK)** in 2025 and my **MSc in Computer Science and Engineering** from **The Chinese University of Hong Kong (CUHK)** in 2026.
+I am **Kenny Wong Lik Hang** (王力恒), an MPhil student in Computer Science and Engineering at The Chinese University of Hong Kong (CUHK), advised by [Prof. Dou Qi](https://www.cse.cuhk.edu.hk/~qdou/). I received my MSc in Computer Science and Engineering from CUHK in 2026, and my BSc in Computer Science from City University of Hong Kong (CityUHK) in 2025.
 
-I am an **MPhil student in Computer Science and Engineering** at **CUHK** (from **1 August 2026 to 31 July 2028**), under the supervision of [**Prof. Dou Qi**](https://www.cse.cuhk.edu.hk/~qdou/). My research interest is in Embodied AI and Robotics.
+My research focuses on **Embodied AI and Robotics**, especially visuotactile perception and policy learning for contact-rich manipulation.
 
-You can view my CV ([here](/files/resume.pdf)). Feel free to reach out to me at `klhwong3 [at] outlook [dot] com`—I’d love to collaborate on something exciting in the future! :>
-
-<a href="https://visitorbadge.io/status?path=https%3A%2F%2Fkenn3o3.github.io%2F"><img src="https://api.visitorbadge.io/api/combined?path=https%3A%2F%2Fkenn3o3.github.io%2F&labelColor=%23d9e3f0&countColor=%232ccce4" /></a>
+You can find my [CV](/files/resume.pdf). Feel free to reach me at klhwong3 [at] outlook [dot] com — I would love to chat about research or collaboration.
 
 ## News
-- (2026-09-15) Our survey, [**A Survey of Robotic Navigation and Manipulation with Physics Simulators in the Era of Embodied AI**](/projects/eai-survey), has been accepted to **ACM Computing Surveys (CSUR)**
-- (2026-09-15) Our paper, [**Equivariant Visual-Tactile Diffusion Policy for Contact-Rich Manipulation**](https://vista-paper.github.io/), has been accepted to **CoRL 2026**
-- (2025-06-04) Graduated from **City University of Hong Kong (CityUHK)** with **BSc in Computer Science**
-- (2024-11-01) Admitted to **The Chinese University of Hong Kong (CUHK)** MSc in Computer Science (2025 Fall Entry)
 
-## Project Highlights
-Below are some of my research projects:
+<ul class="news-feed">
+  <li>
+    <time datetime="2026-09-15">Sep 2026</time>
+    <div>Our survey, <a href="/projects/eai-survey">A Survey of Robotic Navigation and Manipulation with Physics Simulators in the Era of Embodied AI</a>, has been accepted to <em>ACM Computing Surveys (CSUR)</em>.</div>
+  </li>
+  <li>
+    <time datetime="2026-09-15">Sep 2026</time>
+    <div>Our paper, <a href="https://vista-paper.github.io/">Equivariant Visual-Tactile Diffusion Policy for Contact-Rich Manipulation</a>, has been accepted to <em>CoRL 2026</em>.</div>
+  </li>
+  <li>
+    <time datetime="2025-06-04">Jun 2025</time>
+    <div>Graduated from City University of Hong Kong (CityUHK) with a BSc in Computer Science.</div>
+  </li>
+  <li>
+    <time datetime="2024-11-01">Nov 2024</time>
+    <div>Admitted to the MSc in Computer Science programme at The Chinese University of Hong Kong (CUHK), 2025 Fall Entry.</div>
+  </li>
+</ul>
 
-<table class="project-highlights">
-  {% assign sorted_projects = site.projects | sort: 'highlight_order' | reverse %}
-  {% for project in sorted_projects %}
-    <tr class="project-row">
-    <td class="project-thumbnail-cell">
-      <div class="project-thumbnail">
-        <img src="{{ project.thumbnail }}" class="project-thumbnail-image" alt="">
-      </div>
-    </td>
-    <td class="project-details">
-      <a href="{{ project.url }}" class="project-title">{{ project.title }}</a>
-      <div class="project-authors">{{ project.authors }}</div>
-      <div class="project-meta"><em class="project-venue">{{ project.venue }}</em><span class="project-date"> · {{ project.date | date: "%Y-%m-%d" }}</span></div>
-      <div class="project-links">
-        {% if project.project_url %}<a href="{{ project.project_url }}" target="_blank">Project Page</a>{% endif %}
-        {% if project.paper_url %}<a href="{{ project.paper_url }}" target="_blank">Paper</a>{% endif %}
-        {% if project.poster_url %}<a href="{{ project.poster_url }}" target="_blank">Poster</a>{% endif %}
-        {% if project.code_url %}<a href="{{ project.code_url }}" target="_blank">Code</a>{% endif %}
-        {% if project.arxiv_url %}<a href="{{ project.arxiv_url }}" target="_blank">arXiv</a>{% endif %}
-      </div>
-    </td>
-  </tr>
-  {% endfor %}
-</table>
+## Selected Projects
+
+{% include project-list.html %}
 
 ## Teaching
 
+<ul class="teaching-list">
 {% assign teaching_items = site.teaching | sort: 'date' | reverse %}
 {% for item in teaching_items %}
-- **{{ item.title }}** — {{ item.type }}, {{ item.date | date: "%Y %b" }}
+  <li>
+    <a class="teaching-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+    <div class="teaching-meta">{{ item.type }} · {{ item.venue }} · {{ item.date | date: "%b %Y" }}</div>
+  </li>
 {% endfor %}
+</ul>

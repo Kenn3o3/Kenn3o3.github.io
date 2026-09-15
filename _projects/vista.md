@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "Equivariant Visual-Tactile Diffusion Policy for Contact-Rich Manipulation"
-authors: '<strong><u>WONG Lik Hang Kenny</u></strong>, Yiyao Ma, Xiu-Shen Wei, Zelong Tan, Zhuheng Song, Dongsheng Xie, Kai Chen, Qi Dou'
+authors: '<strong>Wong Lik Hang Kenny</strong>, Yiyao Ma, Xiu-Shen Wei, Zelong Tan, Zhuheng Song, Dongsheng Xie, Kai Chen, Qi Dou'
 venue: Conference on Robot Learning (CoRL 2026)
 highlight_order: 3
 featured: true

@@ -1,14 +1,14 @@
 ---
 layout: single
 title: "Frequency-Aware Flow Matching for Continuous and Consistent Robotic Action Generation"
-authors: 'Jianing Guo, Fangzheng Chen, Zihao Mao, <strong><u>Wong Lik Hang Kenny</u></strong>, Zhenhong Wu, Yu Li, Yishuai Cai, Yuanpei Chen, Yikun Ban, Kai Chen, Qi Dou, Yaodong Yang, Xianglong Liu, Huijie Zhao, Simin Li'
+authors: 'Jianing Guo, Fangzheng Chen, Zihao Mao, <strong>Wong Lik Hang Kenny</strong>, Zhenhong Wu, Yu Li, Yishuai Cai, Yuanpei Chen, Yikun Ban, Kai Chen, Qi Dou, Yaodong Yang, Xianglong Liu, Huijie Zhao, Simin Li'
 venue: Under Review
 highlight_order: 2
 featured: true
 collection: projects
 permalink: /projects/fafm
-excerpt: 'Frequency-Aware Flow Matching for Continuous and Consistent Robotic Action Generation'
-date: 2025-06-18
+excerpt: 'Frequency-aware flow matching for generating continuous and temporally consistent robot actions.'
+date: 2026-06-18
 thumbnail: /images/fafm/thumbnail.png
 paper_url: https://arxiv.org/abs/2606.20135
 ---

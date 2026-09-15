@@ -1,8 +1,8 @@
 ---
 layout: single
 title: "Embodied AI for Vision Language Navigation (VLN) with Quadruped Robots"
-authors: '<strong><u>WONG, Lik Hang Kenny</u></strong>'
-venue: Github Repo
+authors: '<strong>Wong Lik Hang Kenny</strong>'
+venue: Final Year Project, CityUHK
 highlight_order: 1
 featured: true
 collection: projects

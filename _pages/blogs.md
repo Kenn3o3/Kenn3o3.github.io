@@ -4,14 +4,12 @@ title: "Blogs"
 permalink: /blogs/
 ---
 
-<table style="width: 100%; border: none;">
+<ul class="post-index">
   {% assign sorted_blogs = site.blogs | sort: 'date' | reverse %}
   {% for blog in sorted_blogs %}
-    <tr>
-      <td style="border: none;">
-        <a href="{{ blog.url }}" style="font-size: 15px; font-weight: bold;">{{ blog.title }} ({{ blog.date | date: "%Y-%m-%d" }})</a>
-        <div style="height: 3px;"></div>
-      </td>
-    </tr>
+    <li>
+      <a href="{{ blog.url | relative_url }}">{{ blog.title }}</a>
+      <time datetime="{{ blog.date | date: '%Y-%m-%d' }}">{{ blog.date | date: "%b %Y" }}</time>
+    </li>
   {% endfor %}
-</table>
+</ul>
