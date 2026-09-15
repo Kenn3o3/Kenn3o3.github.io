@@ -23,6 +23,9 @@ main:
 
   - title: "Blog Posts"
     url: /blogs/
+
+  - title: "Resume"
+    url: /files/resume.pdf
     
   # - title: "CV"
   #   url: /cv/

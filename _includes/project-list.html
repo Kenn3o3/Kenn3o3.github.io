@@ -14,8 +14,12 @@
         {% if project.authors %}
           <p class="project-authors">{{ project.authors }}</p>
         {% endif %}
+        {% if project.excerpt %}
+          <p class="project-excerpt">{{ project.excerpt }}</p>
+        {% endif %}
         <p class="project-meta">
           {% if project.venue %}<em class="project-venue">{{ project.venue }}</em>{% endif %}
+          {% if project.date %}<span class="project-year">{{ project.date | date: "%Y" }}</span>{% endif %}
           <span class="project-links">
             {% if project.project_url %}<a href="{{ project.project_url }}" target="_blank" rel="noopener">Project</a>{% endif %}
             {% if project.paper_url %}<a href="{{ project.paper_url }}" target="_blank" rel="noopener">Paper</a>{% endif %}
