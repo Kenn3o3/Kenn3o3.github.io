@@ -22,7 +22,7 @@ You can find my [CV](/files/resume.pdf). Feel free to reach me at klhwong3 [at] 
   </li>
   <li>
     <time datetime="2026-09-15">Sep 2026</time>
-    <div>Our paper, <a href="https://vista-paper.github.io/">Equivariant Visual-Tactile Diffusion Policy for Contact-Rich Manipulation</a>, has been accepted to <em>CoRL 2026</em>.</div>
+    <div>Our paper, <a href="https://vista-paper.github.io/">Equivariant Visual-Tactile Diffusion Policy for Contact-Rich Manipulation</a>, has been accepted to <em>Conference on Robot Learning (CoRL 2026)</em>.</div>
   </li>
   <li>
     <time datetime="2025-06-04">Jun 2025</time>

@@ -14,19 +14,16 @@
         {% if project.authors %}
           <p class="project-authors">{{ project.authors }}</p>
         {% endif %}
-        {% if project.venue %}
-          <p class="project-venue">{{ project.venue }}</p>
-        {% endif %}
-        <p class="project-links">
-          {% if project.project_url %}<a href="{{ project.project_url }}" target="_blank" rel="noopener">Project</a>{% endif %}
-          {% if project.paper_url %}<a href="{{ project.paper_url }}" target="_blank" rel="noopener">Paper</a>{% endif %}
-          {% if project.arxiv_url %}<a href="{{ project.arxiv_url }}" target="_blank" rel="noopener">arXiv</a>{% endif %}
-          {% if project.code_url %}<a href="{{ project.code_url }}" target="_blank" rel="noopener">Code</a>{% endif %}
-          {% if project.poster_url %}<a href="{{ project.poster_url }}" target="_blank" rel="noopener">Poster</a>{% endif %}
+        <p class="project-meta">
+          {% if project.venue %}<em class="project-venue">{{ project.venue }}</em>{% endif %}
+          <span class="project-links">
+            {% if project.project_url %}<a href="{{ project.project_url }}" target="_blank" rel="noopener">Project</a>{% endif %}
+            {% if project.paper_url %}<a href="{{ project.paper_url }}" target="_blank" rel="noopener">Paper</a>{% endif %}
+            {% if project.arxiv_url %}<a href="{{ project.arxiv_url }}" target="_blank" rel="noopener">arXiv</a>{% endif %}
+            {% if project.code_url %}<a href="{{ project.code_url }}" target="_blank" rel="noopener">Code</a>{% endif %}
+            {% if project.poster_url %}<a href="{{ project.poster_url }}" target="_blank" rel="noopener">Poster</a>{% endif %}
+          </span>
         </p>
-        {% if include.show_excerpt and project.excerpt %}
-          <p class="project-excerpt">{{ project.excerpt | strip_html }}</p>
-        {% endif %}
       </div>
     </article>
   {% endfor %}
