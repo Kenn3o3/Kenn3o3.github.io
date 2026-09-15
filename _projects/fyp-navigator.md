@@ -3,6 +3,7 @@ layout: single
 title: "Embodied AI for Vision Language Navigation (VLN) with Quadruped Robots"
 authors: "WONG, Lik Hang Kenny"
 venue: Github Repo
+highlight_order: 1
 featured: true
 collection: projects
 permalink: /projects/fyp-navigator

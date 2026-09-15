@@ -16,6 +16,8 @@ You can view my CV ([here](/files/resume.pdf)). Feel free to reach out to me at 
 <a href="https://visitorbadge.io/status?path=https%3A%2F%2Fkenn3o3.github.io%2F"><img src="https://api.visitorbadge.io/api/combined?path=https%3A%2F%2Fkenn3o3.github.io%2F&labelColor=%23d9e3f0&countColor=%232ccce4" /></a>
 
 ## News
+- (2026-09-15) Our survey, [**A Survey of Robotic Navigation and Manipulation with Physics Simulators in the Era of Embodied AI**](/projects/eai-survey), has been accepted to **ACM Computing Surveys (CSUR)**
+- (2026-09-15) Our paper, [**Equivariant Visual-Tactile Diffusion Policy for Contact-Rich Manipulation**](https://vista-paper.github.io/), has been accepted to **CoRL 2026**
 - (2025-06-04) Graduated from **City University of Hong Kong (CityUHK)** with **BSc in Computer Science**
 - (2024-11-01) Admitted to **The Chinese University of Hong Kong (CUHK)** MSc in Computer Science (2025 Fall Entry)
 
@@ -23,7 +25,7 @@ You can view my CV ([here](/files/resume.pdf)). Feel free to reach out to me at 
 Below are some of my research projects:
 
 <table style="width: 100%; border: none;">
-  {% assign sorted_projects = site.projects | sort: 'date' | reverse %}
+  {% assign sorted_projects = site.projects | sort: 'highlight_order' | reverse %}
   {% for project in sorted_projects %}
     <tr style="width: 100%; border: none;">
     <td width="20%" style="padding: 10px 30px 10px 10px; border: none;">
@@ -39,6 +41,7 @@ Below are some of my research projects:
       <div style="font-size: 12px">{{ project.venue }}, {{ project.date | date: "%Y-%m-%d" }}</div>
       <div style="height: 5px;"></div>
       <div style="font-size: 12px">
+        {% if project.project_url %}<a href="{{ project.project_url }}" target="_blank">Project Page</a> / {% endif %}
         {% if project.paper_url %}<a href="{{ project.paper_url }}" target="_blank">Paper</a> / {% endif %}
         {% if project.poster_url %}<a href="{{ project.poster_url }}" target="_blank">Poster</a> / {% endif %}
         {% if project.code_url %}<a href="{{ project.code_url }}" target="_blank">Code</a> / {% endif %}

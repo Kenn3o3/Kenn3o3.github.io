@@ -2,17 +2,18 @@
 layout: single
 title: "A Survey of Robotic Navigation and Manipulation with Physics Simulators in the Era of Embodied AI"
 authors: "Wong Lik Hang, Kenny, Xueyang Kang, Kaixin Bai, Jianwei Zhang"
-venue: Under Review
+venue: Accepted to ACM Computing Surveys (CSUR)
+highlight_order: 4
 featured: true
 collection: projects
 permalink: /projects/eai-survey
 excerpt: 'A Survey of Robotic Navigation and Manipulation with Physics Simulators in the Era of Embodied AI'
-date: 2025-06-09
+date: 2026-09-15
 thumbnail: /images/eai-survey/thumbnail.png
 paper_url: https://arxiv.org/abs/2505.01458
 ---
 
-Under Review: [https://arxiv.org/abs/2505.01458](https://arxiv.org/abs/2505.01458)
+Accepted to **ACM Computing Surveys (CSUR)**. Preprint: [https://arxiv.org/abs/2505.01458](https://arxiv.org/abs/2505.01458)
 
 Some Chinese version (reposted by others): 
 - [具身智能时代基于物理模拟器的机器人导航与操控研究 (CSDN)](https://blog.csdn.net/yorkhunter/article/details/148041545)
@@ -25,7 +26,7 @@ Some Chinese version (reposted by others):
 @article{wong2025survey,
   title={A Survey of Robotic Navigation and Manipulation with Physics Simulators in the Era of Embodied AI},
   author={Wong, Lik Hang Kenny and Kang, Xueyang and Bai, Kaixin and Zhang, Jianwei},
-  journal={Under Review},
-  year={2025}
+  journal={ACM Computing Surveys},
+  year={2026}
 }
 ```
