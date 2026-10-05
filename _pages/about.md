@@ -26,10 +26,6 @@ redirect_from:
 
 <ul class="news-feed">
   <li class="news-item--paper">
-    <time datetime="2026-09-29">Sep 2026</time>
-    <div>Our paper, <a href="/projects/mavla">Cooperative Multi-Agent Vision-Language-Action Models via Reinforced Fine-Tuning</a>, is under review at <em>ICLR 2027</em>. <a href="https://arxiv.org/abs/2609.36588">arXiv</a></div>
-  </li>
-  <li class="news-item--paper">
     <time datetime="2026-09-15">Sep 2026</time>
     <div>Our survey, <a href="/projects/eai-survey">A Survey of Robotic Navigation and Manipulation with Physics Simulators in the Era of Embodied AI</a>, has been accepted to <em>ACM Computing Surveys (CSUR)</em>. <a href="https://arxiv.org/abs/2505.01458">arXiv</a></div>
   </li>
