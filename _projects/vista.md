@@ -11,12 +11,13 @@ excerpt: "VISTA is an equivariant visuotactile diffusion policy for data-efficie
 date: 2026-09-04
 thumbnail: /images/vista/method.png
 project_url: https://vista-paper.github.io/
+paper_url: https://arxiv.org/abs/2610.03333
 code_url: https://github.com/Kenn3o3/Vista
 ---
 
-Accepted to the **Conference on Robot Learning (CoRL 2026)**.
+Accepted to the **Conference on Robot Learning (CoRL 2026)**. Preprint: [arXiv:2610.03333](https://arxiv.org/abs/2610.03333)
 
-[Project Page](https://vista-paper.github.io/) · [Main Code](https://github.com/Kenn3o3/Vista) · [Robot Code](https://github.com/Kenn3o3/vt_franka) · [Dataset](https://modelscope.cn/datasets/kenn3o3/MIDFOV_EXPERIMENT)
+[Paper](https://arxiv.org/abs/2610.03333) · [Project Page](https://vista-paper.github.io/) · [Main Code](https://github.com/Kenn3o3/Vista) · [Robot Code](https://github.com/Kenn3o3/vt_franka) · [Dataset](https://modelscope.cn/datasets/kenn3o3/MIDFOV_EXPERIMENT)
 
 ![VISTA method overview](/images/vista/method.png)
 
@@ -29,6 +30,7 @@ VISTA projects visual and tactile observations into spherical tokens, fuses cont
   title={Equivariant Visual-Tactile Diffusion Policy for Contact-Rich Manipulation},
   author={Wong, Lik Hang Kenny and Ma, Yiyao and Wei, Xiu-Shen and Tan, Zelong and Song, Zhuheng and Xie, Dongsheng and Chen, Kai and Dou, Qi},
   booktitle={Conference on Robot Learning},
-  year={2026}
+  year={2026},
+  url={https://arxiv.org/abs/2610.03333}
 }
 ```

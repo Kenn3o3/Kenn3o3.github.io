@@ -27,11 +27,11 @@ redirect_from:
 <ul class="news-feed">
   <li class="news-item--paper">
     <time datetime="2026-09-15">Sep 2026</time>
-    <div>Our survey, <a href="/projects/eai-survey">A Survey of Robotic Navigation and Manipulation with Physics Simulators in the Era of Embodied AI</a>, has been accepted to <em>ACM Computing Surveys (CSUR)</em>.</div>
+    <div>Our survey, <a href="/projects/eai-survey">A Survey of Robotic Navigation and Manipulation with Physics Simulators in the Era of Embodied AI</a>, has been accepted to <em>ACM Computing Surveys (CSUR)</em>. <a href="https://dl.acm.org/doi/10.1145/3856802">ACM DL</a> · <a href="https://arxiv.org/abs/2505.01458">arXiv</a></div>
   </li>
   <li class="news-item--paper">
     <time datetime="2026-09-15">Sep 2026</time>
-    <div>Our paper, <a href="https://vista-paper.github.io/">Equivariant Visual-Tactile Diffusion Policy for Contact-Rich Manipulation</a>, has been accepted to <em>Conference on Robot Learning (CoRL 2026)</em>.</div>
+    <div>Our paper, <a href="https://vista-paper.github.io/">Equivariant Visual-Tactile Diffusion Policy for Contact-Rich Manipulation</a>, has been accepted to <em>Conference on Robot Learning (CoRL 2026)</em>. <a href="https://arxiv.org/abs/2610.03333">arXiv</a></div>
   </li>
   <li>
     <time datetime="2025-06-04">Jun 2025</time>

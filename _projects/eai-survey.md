@@ -10,10 +10,11 @@ permalink: /projects/eai-survey
 excerpt: 'A survey of physics simulators for robotic navigation and manipulation in the era of embodied AI.'
 date: 2026-09-09
 thumbnail: /images/eai-survey/thumbnail.png
-paper_url: https://arxiv.org/abs/2505.01458
+paper_url: https://dl.acm.org/doi/10.1145/3856802
+arxiv_url: https://arxiv.org/abs/2505.01458
 ---
 
-Accepted to **ACM Computing Surveys (CSUR)**. Preprint: [https://arxiv.org/abs/2505.01458](https://arxiv.org/abs/2505.01458)
+Accepted to **ACM Computing Surveys (CSUR)**. [ACM Digital Library](https://dl.acm.org/doi/10.1145/3856802) · Preprint: [arXiv:2505.01458](https://arxiv.org/abs/2505.01458)
 
 Some Chinese version (reposted by others): 
 - [具身智能时代基于物理模拟器的机器人导航与操控研究 (CSDN)](https://blog.csdn.net/yorkhunter/article/details/148041545)
@@ -27,6 +28,8 @@ Some Chinese version (reposted by others):
   title={A Survey of Robotic Navigation and Manipulation with Physics Simulators in the Era of Embodied AI},
   author={Wong, Lik Hang Kenny and Kang, Xueyang and Bai, Kaixin and Zhang, Jianwei},
   journal={ACM Computing Surveys},
-  year={2026}
+  year={2026},
+  doi={10.1145/3856802},
+  url={https://dl.acm.org/doi/10.1145/3856802}
 }
 ```
