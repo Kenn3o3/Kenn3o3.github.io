@@ -899,9 +899,46 @@ a { color: var(--kw-blue); }
   .home-page .sidebar {
     margin-bottom: 1.4rem;
     padding: 1rem;
+    overflow: visible;
     border: 1px solid var(--kw-line);
     border-radius: 18px;
     background: rgba(255, 255, 255, 0.82);
+  }
+
+  .sidebar .author__urls-wrapper {
+    display: block;
+    width: 100%;
+    margin-top: 0.85rem;
+    text-align: right;
+  }
+
+  .sidebar .author__urls {
+    position: static;
+    width: 100%;
+    margin-top: 0.75rem;
+    padding: 0.55rem 0 0.1rem;
+    border: 0;
+    border-top: 1px solid var(--kw-line);
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    z-index: auto;
+    text-align: left;
+
+    &::before,
+    &::after {
+      display: none;
+    }
+
+    li {
+      white-space: normal;
+    }
+
+    a,
+    li {
+      padding-top: 0.32rem;
+      padding-bottom: 0.32rem;
+    }
   }
 }
 
