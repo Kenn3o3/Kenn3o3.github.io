@@ -672,80 +672,79 @@ a { color: var(--kw-blue); }
   text-transform: uppercase;
 }
 
-.home-hero .connect-card {
+.connect-row {
   position: relative;
   z-index: 1;
-  margin-top: 1.7rem;
-}
-
-.connect-card {
-  display: grid;
-  gap: 1.1rem;
-  padding: 1.2rem 1.3rem;
-  border: 1px solid var(--kw-line);
-  border-radius: 17px;
-  background: #fff;
+  max-width: 760px;
+  margin-top: 1.45rem;
 
   > p {
-    margin: 0 !important;
-    color: #556276;
-    font-size: 0.88rem !important;
-    line-height: 1.65 !important;
+    margin: 0 0 0.45rem !important;
+    color: var(--kw-muted);
+    font-size: 0.9rem !important;
+    line-height: 1.6 !important;
   }
 }
 
-.connect-grid {
+.connect-links {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  gap: 1.25rem;
+  align-items: flex-start;
+  gap: 0.15rem 0.35rem;
+
+  > a,
+  > span,
+  summary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.2rem 0.15rem;
+    color: #3d4d63;
+    font-size: 0.9rem;
+    font-weight: 650;
+    line-height: 1.4;
+    text-decoration: none;
+  }
+
+  > a:hover,
+  summary:hover {
+    color: var(--kw-blue);
+    text-decoration: none;
+  }
+
+  i {
+    width: 1em;
+    color: #5b6b80;
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+  summary {
+    list-style: none;
+    cursor: pointer;
+
+    &::-webkit-details-marker { display: none; }
+  }
 }
 
 .connect-wechat {
-  margin: 0;
+  summary { margin: 0; }
 
   img {
     display: block;
-    width: 168px;
+    width: 132px;
     height: auto;
-    border: 1px solid #e0e8f3;
-    border-radius: 12px;
+    margin: 0.45rem 0 0.3rem;
+    border: 1px solid #e6edf5;
+    border-radius: 10px;
     background: #fff;
   }
 
-  figcaption {
-    margin-top: 0.45rem;
-    color: #445166;
+  span {
+    display: block;
+    color: #66758a;
     font-size: 0.75rem;
-    font-weight: 750;
-    text-align: center;
-  }
-}
-
-.connect-discord {
-  min-width: 180px;
-
-  i {
-    color: #5865f2;
-    font-size: 1.35rem;
-  }
-
-  p {
-    margin: 0.35rem 0 0 !important;
-    color: #445166;
-    font-size: 0.75rem !important;
-    font-weight: 800;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-  }
-
-  .connect-handle {
-    margin-top: 0.15rem !important;
-    color: var(--kw-ink);
-    font-size: 1.05rem !important;
-    font-weight: 800;
-    letter-spacing: 0;
-    text-transform: none;
+    font-weight: 650;
   }
 }
 
