@@ -56,7 +56,7 @@ redirect_from:
 <div class="experience-grid">
   <article class="experience-card">
     <div class="experience-card__top"><span>Research</span><time>May - Aug 2024</time></div>
-    <h3>Oak Ridge National Laboratory · UTK</h3>
+    <h3>University of Tennessee, Knoxville</h3>
     <p class="experience-role">Undergraduate Researcher, NICS</p>
     <p>Developed topological-map navigation methods for legged robot image-goal navigation using Habitat-Sim and Isaac Sim. The research was supported by the National Science Foundation and supervised by Dr. Kwai Wong.</p>
   </article>
