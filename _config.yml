@@ -26,7 +26,7 @@ author:
   pronouns         : "he/him"
   bio              : "Master's degree. Embodied AI and Robotics."
   discord          : "kennywonglh3"
-  cv               : "/files/resume.pdf"
+  cv               : # URL
   location         : "Hong Kong SAR"
   employer         : "The Chinese University of Hong Kong"
   uri              : # URL

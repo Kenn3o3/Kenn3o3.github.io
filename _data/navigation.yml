@@ -15,20 +15,11 @@ main:
   # - title: "Talks"
   #   url: /talks/    
 
-  - title: "Teaching"
-    url: /teaching/
-    
   - title: "Projects"
     url: /projects/
 
   - title: "Blog Posts"
     url: /blogs/
-
-  - title: "Resume"
-    url: /files/resume.pdf
-    
-  # - title: "CV"
-  #   url: /cv/
     
   # - title: "Guide"
   #   url: /markdown/

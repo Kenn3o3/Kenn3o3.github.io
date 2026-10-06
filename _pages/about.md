@@ -10,11 +10,10 @@ redirect_from:
 <section class="home-hero" aria-labelledby="home-title">
   <p class="home-kicker"><span aria-hidden="true"></span>Master's degree · Embodied AI &amp; Robotics</p>
   <h1 id="home-title">I build learning systems for robots that <em>see, feel, and act.</em></h1>
-  <p class="home-lead">I am <strong>Kenny Wong Lik Hang</strong> (王力恒), a master's student in Computer Science and Engineering at The Chinese University of Hong Kong, working under supervision of Dou Qi. My research focuses on visuotactile perception and policy learning for contact-rich manipulation.</p>
+  <p class="home-lead">I am <strong>Kenny Wong Lik Hang</strong> (王力恒), a master's student in Computer Science and Engineering at The Chinese University of Hong Kong, working in Prof. Dou Qi's lab. My research focuses on visuotactile perception and policy learning for contact-rich manipulation.</p>
   <p class="home-background">I received my BSc in Computer Science from City University of Hong Kong in 2025.</p>
   <div class="home-actions">
     <a class="home-button home-button--primary" href="#selected-work">Selected work <span aria-hidden="true">↓</span></a>
-    <a class="home-button" href="/files/resume.pdf">Resume <span aria-hidden="true">↗</span></a>
     <a class="home-button" href="mailto:klhwong3@outlook.com">Email</a>
   </div>
 </section>
@@ -107,17 +106,3 @@ redirect_from:
   <div class="interest-tags"><span>Sports</span><span>Music</span><span>Exploring</span></div>
 </section>
 
-<div class="home-section-heading">
-  <div><p>Academic service</p><h2>Teaching</h2></div>
-</div>
-
-<ul class="teaching-list">
-{% assign teaching_items = site.teaching | sort: 'date' | reverse %}
-{% for item in teaching_items %}
-  <li>
-    <a class="teaching-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
-    <div class="teaching-meta">{{ item.type }} · {{ item.venue }} · {{ item.date | date: "%b %Y" }}</div>
-    {% if item.excerpt %}<p class="teaching-excerpt">{{ item.excerpt }}</p>{% endif %}
-  </li>
-{% endfor %}
-</ul>
