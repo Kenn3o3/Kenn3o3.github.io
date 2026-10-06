@@ -103,8 +103,8 @@ redirect_from:
 </div>
 
 <section class="interests-card" aria-label="Personal interests">
-  <p>When I step away from research, I enjoy staying active and discovering new places. You might find me playing basketball, practicing golf, swimming, or hiking. I also enjoy music, gaming, and exploring new neighborhoods, cities, and trails.</p>
-  <div class="interest-tags"><span>Basketball</span><span>Golf</span><span>Swimming</span><span>Hiking</span><span>Music</span><span>Gaming</span><span>Exploring</span></div>
+  <p>When I step away from research, my interests are sports, music, and exploring.</p>
+  <div class="interest-tags"><span>Sports</span><span>Music</span><span>Exploring</span></div>
 </section>
 
 <div class="home-section-heading">
