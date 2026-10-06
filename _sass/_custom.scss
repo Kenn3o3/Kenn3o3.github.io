@@ -672,6 +672,83 @@ a { color: var(--kw-blue); }
   text-transform: uppercase;
 }
 
+.home-hero .connect-card {
+  position: relative;
+  z-index: 1;
+  margin-top: 1.7rem;
+}
+
+.connect-card {
+  display: grid;
+  gap: 1.1rem;
+  padding: 1.2rem 1.3rem;
+  border: 1px solid var(--kw-line);
+  border-radius: 17px;
+  background: #fff;
+
+  > p {
+    margin: 0 !important;
+    color: #556276;
+    font-size: 0.88rem !important;
+    line-height: 1.65 !important;
+  }
+}
+
+.connect-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.connect-wechat {
+  margin: 0;
+
+  img {
+    display: block;
+    width: 168px;
+    height: auto;
+    border: 1px solid #e0e8f3;
+    border-radius: 12px;
+    background: #fff;
+  }
+
+  figcaption {
+    margin-top: 0.45rem;
+    color: #445166;
+    font-size: 0.75rem;
+    font-weight: 750;
+    text-align: center;
+  }
+}
+
+.connect-discord {
+  min-width: 180px;
+
+  i {
+    color: #5865f2;
+    font-size: 1.35rem;
+  }
+
+  p {
+    margin: 0.35rem 0 0 !important;
+    color: #445166;
+    font-size: 0.75rem !important;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .connect-handle {
+    margin-top: 0.15rem !important;
+    color: var(--kw-ink);
+    font-size: 1.05rem !important;
+    font-weight: 800;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+}
+
 .interests-card {
   padding: 1.2rem 1.3rem;
   border: 1px solid var(--kw-line);

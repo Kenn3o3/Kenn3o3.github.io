@@ -8,15 +8,29 @@ redirect_from:
 ---
 
 <section class="home-hero" aria-labelledby="home-title">
-  <p class="home-kicker"><span aria-hidden="true"></span>MPhil at CUHK · Embodied AI &amp; Robotics</p>
+  <p class="home-kicker"><span aria-hidden="true"></span>Master's degree · Embodied AI &amp; Robotics</p>
   <h1 id="home-title">I build learning systems for robots that <em>see, feel, and act.</em></h1>
-  <p class="home-lead">I am <strong>Kenny Wong Lik Hang</strong> (王力恒), an MPhil student in Computer Science and Engineering at The Chinese University of Hong Kong, advised by <a href="https://www.cse.cuhk.edu.hk/~qdou/">Prof. Dou Qi</a>. My research focuses on visuotactile perception and policy learning for contact-rich manipulation.</p>
-  <p class="home-background">I received my MSc in Computer Science and Engineering from CUHK in 2026 and my BSc in Computer Science from City University of Hong Kong in 2025.</p>
+  <p class="home-lead">I am <strong>Kenny Wong Lik Hang</strong> (王力恒), a master's student in Computer Science and Engineering at The Chinese University of Hong Kong, working under supervision of Dou Qi. My research focuses on visuotactile perception and policy learning for contact-rich manipulation.</p>
+  <p class="home-background">I received my BSc in Computer Science from City University of Hong Kong in 2025.</p>
   <div class="home-actions">
     <a class="home-button home-button--primary" href="#selected-work">Selected work <span aria-hidden="true">↓</span></a>
     <a class="home-button" href="/files/resume.pdf">Resume <span aria-hidden="true">↗</span></a>
     <a class="home-button" href="mailto:klhwong3@outlook.com">Email</a>
   </div>
+  <section class="connect-card" id="connect" aria-label="WeChat and Discord">
+    <p>Welcome to connect and discuss research, robotics, or collaboration.</p>
+    <div class="connect-grid">
+      <figure class="connect-wechat">
+        <img src="{{ '/images/wechat-qr.png' | relative_url }}" alt="WeChat QR code for KennyWonglk" width="168" height="220">
+        <figcaption>WeChat · KennyWonglk</figcaption>
+      </figure>
+      <div class="connect-discord">
+        <i class="fab fa-discord" aria-hidden="true"></i>
+        <p>Discord</p>
+        <p class="connect-handle">kennywonglh3</p>
+      </div>
+    </div>
+  </section>
 </section>
 
 <div class="home-section-heading">
@@ -82,7 +96,7 @@ redirect_from:
 <div class="education-grid">
   <article class="education-card">
     <span class="education-mark education-mark--cuhk"><img src="/images/education/cuhk.png" alt="The Chinese University of Hong Kong emblem"></span>
-    <div><h3>The Chinese University of Hong Kong</h3><p>MPhil in Computer Science · Aug 2026–present</p><p>MSc in Computer Science · Sep 2025–Aug 2026</p><strong>MSc Dean's List</strong></div>
+    <div><h3>The Chinese University of Hong Kong</h3><p>Master's degree in Computer Science · Sep 2025–</p><strong>MSc Dean's List</strong></div>
   </article>
   <article class="education-card">
     <span class="education-mark education-mark--cityu"><img src="/images/education/cityuhk.jpg" alt="City University of Hong Kong logo"></span>
