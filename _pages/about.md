@@ -17,21 +17,6 @@ redirect_from:
     <a class="home-button" href="/files/resume.pdf">Resume <span aria-hidden="true">↗</span></a>
     <a class="home-button" href="mailto:klhwong3@outlook.com">Email</a>
   </div>
-  <div class="connect-row" id="connect">
-    <p>Welcome to connect and discuss research, robotics, or collaboration.</p>
-    <div class="connect-links">
-      <a href="https://scholar.google.com/citations?user=x0JaFVIAAAAJ" target="_blank" rel="noreferrer"><i class="ai ai-google-scholar" aria-hidden="true"></i>Scholar</a>
-      <a href="https://github.com/Kenn3o3" target="_blank" rel="noreferrer"><i class="fab fa-github" aria-hidden="true"></i>GitHub</a>
-      <a href="https://x.com/kennywonglh" target="_blank" rel="noreferrer"><i class="fab fa-x-twitter" aria-hidden="true"></i>X</a>
-      <a href="https://www.linkedin.com/in/kennywlh" target="_blank" rel="noreferrer"><i class="fab fa-linkedin" aria-hidden="true"></i>LinkedIn</a>
-      <details class="connect-wechat">
-        <summary><i class="fab fa-weixin" aria-hidden="true"></i>WeChat</summary>
-        <img src="{{ '/images/wechat-qr.png' | relative_url }}" alt="WeChat QR code for KennyWonglk" width="132" height="176">
-        <span>KennyWonglk</span>
-      </details>
-      <span><i class="fab fa-discord" aria-hidden="true"></i>Discord · kennywonglh3</span>
-    </div>
-  </div>
 </section>
 
 <div class="home-section-heading">
