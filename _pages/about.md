@@ -8,7 +8,7 @@ redirect_from:
 ---
 
 <section class="home-hero" aria-labelledby="home-title">
-  <p class="home-kicker"><span aria-hidden="true"></span>Master's degree · Embodied AI &amp; Robotics</p>
+  <p class="home-kicker"><span aria-hidden="true"></span>Embodied AI &amp; Robotics</p>
   <h1 id="home-title">I build learning systems for robots that <em>see, feel, and act.</em></h1>
   <p class="home-lead">I am <strong>Kenny Wong Lik Hang</strong> (王力恒), a master's student in Computer Science and Engineering at The Chinese University of Hong Kong, working in Prof. Dou Qi's lab. My research focuses on visuotactile perception and policy learning for contact-rich manipulation.</p>
   <p class="home-background">I received my BSc in Computer Science from City University of Hong Kong in 2025.</p>
