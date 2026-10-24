@@ -1,0 +1,120 @@
+---
+permalink: /
+title: "Kenny Wong — Embodied AI and Robotics"
+author_profile: true
+redirect_from: 
+  - /about/
+  - /about.html
+---
+
+<section class="home-hero" aria-labelledby="home-title">
+  <div class="home-intro">
+  <p class="home-kicker"><span aria-hidden="true"></span>Embodied AI &amp; Robotics</p>
+  <h1 id="home-title">I build learning systems for robots that <em>see, feel, and act.</em></h1>
+  <p class="home-lead">I am <strong>Kenny Wong Lik Hang</strong> (王力恒), a master's student in Computer Science and Engineering at The Chinese University of Hong Kong, working in Prof. Dou Qi's lab. My research focuses on visuotactile perception and policy learning for contact-rich manipulation.</p>
+  <p class="home-background">I received my BSc in Computer Science from City University of Hong Kong in 2025.</p>
+  <div class="home-actions">
+    <a class="home-button home-button--primary" href="#selected-work">Selected work <span aria-hidden="true">↓</span></a>
+    <a class="home-button" href="mailto:klhwong3@outlook.com">Email</a>
+    <button class="home-button tactile-toggle" type="button" aria-expanded="false" aria-controls="tactile-study" hidden>Try a 3D grasp <span aria-hidden="true">+</span></button>
+  </div>
+  </div>
+  {% include tactile-study.html %}
+</section>
+
+<nav class="home-index" aria-label="On this page">
+  <span>On this page</span>
+  <a href="#selected-work">Research</a>
+  <a href="#news">News</a>
+  <a href="#experience">Experience</a>
+  <a href="#education">Education</a>
+</nav>
+
+<div class="home-section-heading" id="selected-work">
+  <div><p>Research</p><h2>Selected work</h2></div>
+  <a href="/projects/">View all projects <span aria-hidden="true">↗</span></a>
+</div>
+
+{% include project-list.html %}
+
+<div class="home-section-heading" id="news">
+  <div><p>Recent</p><h2>News</h2></div>
+  <span>Research and academic updates</span>
+</div>
+
+<ul class="news-feed">
+  <li class="news-item--paper">
+    <time datetime="2026-09-15">Sep 2026</time>
+    <div>Our survey, <a href="/projects/eai-survey">A Survey of Robotic Navigation and Manipulation with Physics Simulators in the Era of Embodied AI</a>, has been accepted to <em>ACM Computing Surveys (CSUR)</em>. <a href="https://arxiv.org/abs/2505.01458">arXiv</a></div>
+  </li>
+  <li class="news-item--paper">
+    <time datetime="2026-09-15">Sep 2026</time>
+    <div>Our paper, <a href="https://vista-paper.github.io/">Equivariant Visual-Tactile Diffusion Policy for Contact-Rich Manipulation</a>, has been accepted to <em>Conference on Robot Learning (CoRL 2026)</em>. <a href="https://arxiv.org/abs/2610.03333">arXiv</a></div>
+  </li>
+  <li>
+    <time datetime="2025-06-04">Jun 2025</time>
+    <div>Graduated from City University of Hong Kong (CityUHK) with a BSc in Computer Science.</div>
+  </li>
+  <li>
+    <time datetime="2024-11-01">Nov 2024</time>
+    <div>Admitted to the MSc in Computer Science programme at The Chinese University of Hong Kong (CUHK), 2025 Fall Entry.</div>
+  </li>
+</ul>
+
+<div class="home-section-heading" id="experience">
+  <div><p>Background</p><h2>Experience</h2></div>
+</div>
+
+<div class="experience-grid">
+  <article class="experience-card">
+    <div class="experience-card__top"><span>Research</span><time>May - Aug 2024</time></div>
+    <h3>University of Tennessee, Knoxville</h3>
+    <p class="experience-role">Undergraduate Researcher, NICS</p>
+    <p>Developed topological-map navigation methods for legged robot image-goal navigation using Habitat-Sim and Isaac Sim. The research was supported by the National Science Foundation and supervised by Dr. Kwai Wong.</p>
+  </article>
+  <article class="experience-card">
+    <div class="experience-card__top"><span>Research support</span><time>Jun 2025 - Aug 2026</time></div>
+    <h3>The Chinese University of Hong Kong</h3>
+    <p class="experience-role">Student Helper · Part-time</p>
+    <p>Supported ongoing research projects in 3D computer vision, multimodal large language models, and robotics. Based on-site in Hong Kong.</p>
+  </article>
+  <article class="experience-card">
+    <div class="experience-card__top"><span>Industry</span><time>Jul 2023 - May 2024</time></div>
+    <h3>The Bank of East Asia</h3>
+    <p class="experience-role">Student Programmer, IT Department</p>
+    <p>Worked on backend automation and internal software systems using Java, SQL, Linux, sockets, Selenium, and Git within the Technology Innovation and IT Project Management section.</p>
+  </article>
+</div>
+
+<div class="home-section-heading" id="education">
+  <div><p>Education</p><h2>Education &amp; honors</h2></div>
+</div>
+
+<div class="education-grid">
+  <article class="education-card">
+    <span class="education-mark education-mark--cuhk"><img src="/images/education/cuhk.png" alt="The Chinese University of Hong Kong emblem"></span>
+    <div><h3>The Chinese University of Hong Kong</h3><p>Master's degree in Computer Science · Sep 2025–</p><strong>MSc Dean's List</strong></div>
+  </article>
+  <article class="education-card">
+    <span class="education-mark education-mark--cityu"><img src="/images/education/cityuhk.jpg" alt="City University of Hong Kong logo"></span>
+    <div><h3>City University of Hong Kong</h3><p>BSc in Computer Science · 2021–2025</p><strong>Cum laude · Top 15% of the graduating class</strong></div>
+  </article>
+</div>
+
+<div class="honors-strip" aria-label="Selected awards and achievements">
+  <span class="honors-label">Awards &amp; achievements</span>
+  <span>Shanghai Commercial Bank Scholarship <small>2024–25</small></span>
+  <span>InfoTech Job Market Driven Scholarships <small>2024–25</small></span>
+  <span>WACV 2025 Elderly Action Recognition Challenge <small>2nd of 23</small></span>
+  <span>IEEEXtreme 18.0 <small>Top 5.4% worldwide</small></span>
+</div>
+
+<div class="home-section-heading">
+  <div><p>Off the clock</p><h2>Beyond research</h2></div>
+</div>
+
+<section class="interests-card" aria-label="Personal interests">
+  <p>When I step away from research, my interests are sports, music, and exploring.</p>
+  <div class="interest-tags"><span>Sports</span><span>Music</span><span>Exploring</span></div>
+</section>
+

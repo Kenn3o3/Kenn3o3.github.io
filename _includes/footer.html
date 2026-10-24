@@ -1,0 +1,10 @@
+{% include base_path %}
+
+<div class="footer-signoff">
+  <p>&copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}</p>
+  <nav aria-label="Footer navigation">
+    <a href="mailto:{{ site.author.email }}">Email</a>
+    {% if site.author.github %}<a href="https://github.com/{{ site.author.github }}">GitHub</a>{% endif %}
+    {% if site.author.googlescholar %}<a href="{{ site.author.googlescholar }}">Google Scholar</a>{% endif %}
+  </nav>
+</div>

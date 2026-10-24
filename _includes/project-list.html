@@ -1,0 +1,35 @@
+{% assign sorted_projects = site.projects | where: 'first_author', true | sort: 'highlight_order' | reverse %}
+<p class="project-list-note">First-author papers only.</p>
+<div class="project-list">
+  {% for project in sorted_projects %}
+    <article class="project-card">
+      {% if project.thumbnail %}
+        <a class="project-thumb" href="{{ project.url | relative_url }}" tabindex="-1" aria-hidden="true">
+          <img src="{{ project.thumbnail | relative_url }}" alt="">
+        </a>
+      {% endif %}
+      <div class="project-body">
+        <h3 class="project-title">
+          <a href="{{ project.url | relative_url }}">{{ project.title }}</a>
+        </h3>
+        {% if project.authors %}
+          <p class="project-authors">{{ project.authors }}</p>
+        {% endif %}
+        {% if project.excerpt %}
+          <p class="project-excerpt">{{ project.excerpt }}</p>
+        {% endif %}
+        <p class="project-meta">
+          {% if project.venue %}<em class="project-venue">{{ project.venue }}</em>{% endif %}
+          {% if project.date %}<span class="project-year">{{ project.date | date: "%Y" }}</span>{% endif %}
+          <span class="project-links">
+            {% if project.project_url %}<a href="{{ project.project_url }}" target="_blank" rel="noopener">Project</a>{% endif %}
+            {% if project.paper_url %}<a href="{{ project.paper_url }}" target="_blank" rel="noopener">Paper</a>{% endif %}
+            {% if project.arxiv_url %}<a href="{{ project.arxiv_url }}" target="_blank" rel="noopener">arXiv</a>{% endif %}
+            {% if project.code_url %}<a href="{{ project.code_url }}" target="_blank" rel="noopener">Code</a>{% endif %}
+            {% if project.poster_url %}<a href="{{ project.poster_url }}" target="_blank" rel="noopener">Poster</a>{% endif %}
+          </span>
+        </p>
+      </div>
+    </article>
+  {% endfor %}
+</div>

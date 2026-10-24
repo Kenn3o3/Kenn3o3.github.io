@@ -1,0 +1,37 @@
+<aside class="tactile-study" id="tactile-study" aria-labelledby="tactile-title" data-state="open" data-contact="false">
+  <div class="tactile-heading">
+    <div><p class="tactile-eyebrow">An interactive experiment</p><h2 id="tactile-title">Grasp a shape. See the touch.</h2></div>
+    <span class="tactile-dimension" aria-hidden="true">3D</span>
+  </div>
+  <div class="grasp-visuals">
+    <div class="grasp-viewport">
+      <img class="grasp-poster" src="{{ '/images/grasp-preview.png' | relative_url }}" width="476" height="438" alt="A three-dimensional parallel-jaw gripper with open fingers around a sphere. No contact is present.">
+      <div class="grasp-scene" aria-label="3D gripper view"></div>
+      <button class="grasp-view-reset" type="button" hidden aria-label="Reset the 3D camera view">Reset view ↗</button>
+      <span class="grasp-orbit-hint" hidden>Drag to rotate</span>
+    </div>
+    <div class="grasp-readouts" hidden aria-label="Tactile sensor images">
+      <figure><figcaption><span class="sensor-label">L</span> Left</figcaption><canvas class="grasp-image" data-sensor="left" width="144" height="144" role="img" aria-label="Left tactile image: no contact"></canvas></figure>
+      <figure><figcaption><span class="sensor-label">R</span> Right</figcaption><canvas class="grasp-image" data-sensor="right" width="144" height="144" role="img" aria-label="Right tactile image: no contact"></canvas></figure>
+      <div class="grasp-signal-key" aria-hidden="true"><span>Low</span><span class="grasp-color-scale"></span><span>High</span></div>
+    </div>
+  </div>
+  <div class="grasp-interface" hidden>
+    <div class="grasp-flow-row">
+      <button class="grasp-flow-toggle" type="button" aria-pressed="true" aria-describedby="grasp-flow-note"><span aria-hidden="true">↗</span> Marker flow</button>
+      <span id="grasp-flow-note">From unloaded position · ×3</span>
+    </div>
+    <fieldset class="grasp-shapes">
+      <legend class="screen-reader-text">Object shape</legend>
+      <button type="button" data-shape="sphere" aria-pressed="true"><span aria-hidden="true">●</span> Sphere</button>
+      <button type="button" data-shape="cube" aria-pressed="false"><span aria-hidden="true">■</span> Cube</button>
+      <button type="button" data-shape="cylinder" aria-pressed="false"><svg viewBox="0 0 16 18" aria-hidden="true"><ellipse cx="8" cy="4" rx="5" ry="2.5"/><path d="M3 4v10c0 3 10 3 10 0V4M3 14c0-3 10-3 10 0"/></svg> Cylinder</button>
+    </fieldset>
+    <div class="grasp-force-row"><label for="grasp-force">Grip force <span>(relative)</span></label><output for="grasp-force" id="grasp-force-value">50%</output></div>
+    <input id="grasp-force" type="range" min="0" max="100" value="50" aria-describedby="grasp-explanation">
+    <div class="grasp-action-row"><button class="grasp-action" type="button">Grasp object <span aria-hidden="true">→</span></button><span class="grasp-status" role="status">Open · no contact</span></div>
+    <p id="grasp-explanation">Choose a shape, then grasp. More force deepens the imprint.</p>
+  </div>
+  <p class="grasp-fallback-note">A 3D sketch of how shape and grip force change tactile images.</p>
+  <p class="tactile-caption">Illustrative contact model · not measured sensor data</p>
+</aside>
